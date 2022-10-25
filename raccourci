@@ -1,3 +1,4 @@
+faire le make puis lancer config
 nano ~/.bash_profile
 nano ~/.zshrc
 gall = git add .; git commit -m "new"; git push
