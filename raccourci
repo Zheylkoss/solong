@@ -1,3 +1,4 @@
+nano ~/.zshrc
 gall = git add .; git commit -m "new"; git push
 cd ..; rm -rf test; git clone git@github.com:Zheylkoss/solong.git; cd test; make
 
