@@ -6,7 +6,7 @@
 #    By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/10/25 16:46:57 by zakariyaham      ###   ########.fr        #
+#    Updated: 2022/10/25 18:50:16 by zakariyaham      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
 DEPS = $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
 
 INC = -I./includes/
+
+lib = -L./libs -lft -L./libs -lprintf -L./libs -lmlx -lXext -lX11 -lm -lz
 
 FLAGS = -Wall -Werror -Wextra -MMD -MP -g3
 
