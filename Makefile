@@ -6,7 +6,7 @@
 #    By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/10/25 18:50:16 by zakariyaham      ###   ########.fr        #
+#    Updated: 2022/10/25 19:13:24 by zakariyaham      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,15 @@ DEPS = $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
 
 INC = -I./includes/
 
-lib = -L./libs -lft -L./libs -lprintf -L./libs -lmlx -lXext -lX11 -lm -lz
+lib = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 
 FLAGS = -Wall -Werror -Wextra -MMD -MP -g3
 
 ${NAME} : ${OBJS}
-	gcc ${FLAGS} $(OBJS) -o ${NAME}
+	make -c ./libs/libft/
+	make -c ./libs/printf/
+	make -c ./libs/minilibx-linux/
+	gcc ${FLAGS} $(OBJS) $(lib) -o ${NAME}
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p ${OBJ_PATH}
