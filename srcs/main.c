@@ -6,9 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 19:02:27 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/25 16:58:29 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "so_long.h"
 
 int	main(void)
 {

@@ -1,2 +1,5 @@
 git add .; git commit -m "new"; git push
 cd ..; rm -rf test; git clone git@github.com:Zheylkoss/solong.git; cd test; make
+
+-L pour chemin de .a // on a besoin du .a pour les executables 
+-I pour chemin de .h // on a besoin du .h pour les .o
