@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/26 00:45:33 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/26 17:23:57 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,5 @@ int	main(void)
 
 	a = 0;
 }
+
+
