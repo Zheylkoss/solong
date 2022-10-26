@@ -6,7 +6,7 @@
 #    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/10/26 19:11:10 by zhamdouc         ###   ########.fr        #
+#    Updated: 2022/10/26 19:14:40 by zhamdouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,11 @@ ${NAME} : ${OBJS}
 	make -C ./libs/libft/
 	make -C ./libs/printf/
 	make -C ./libs/minilibx-linux/
-	$(CC) ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
+	clang ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p ${OBJ_PATH}
-	$(CC) ${FLAGS} ${INC} -o $@ -c $<
+	clang ${FLAGS} ${INC} -o $@ -c $<
 	
 all : ${NAME}
 
