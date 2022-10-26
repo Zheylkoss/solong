@@ -6,11 +6,11 @@
 #    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/26 14:30:07 by zhamdouc          #+#    #+#              #
-#    Updated: 2022/06/14 14:44:33 by zhamdouc         ###   ########.fr        #
+#    Updated: 2022/10/26 18:41:49 by zhamdouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libprintf.a
 
 SRC = ft_putnbr_base.c \
 	ft_putnbr_printf.c \

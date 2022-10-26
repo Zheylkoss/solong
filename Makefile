@@ -1,19 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+         #
+#    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/10/25 19:13:24 by zakariyaham      ###   ########.fr        #
+#    Updated: 2022/10/26 18:55:40 by zhamdouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRC_PATH = ./srcs/
-SRC = main.c
+SRC = ft_main.c
 SRCS = $(addprefix ${SRC_PATH}, ${SRC})
 		
 OBJ_PATH	= obj/
@@ -22,17 +22,17 @@ OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
 
 DEPS = $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
 
-INC = -I./includes/
+INC = -I./includes/so_long.h
 
-lib = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
+LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 
 FLAGS = -Wall -Werror -Wextra -MMD -MP -g3
 
 ${NAME} : ${OBJS}
-	make -c ./libs/libft/
-	make -c ./libs/printf/
-	make -c ./libs/minilibx-linux/
-	gcc ${FLAGS} $(OBJS) $(lib) -o ${NAME}
+	make -C ./libs/libft/
+	make -C ./libs/printf/
+	make -C ./libs/minilibx-linux/
+	gcc ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p ${OBJ_PATH}
@@ -41,9 +41,14 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 all : ${NAME}
 
 clean :
+	make clean -C ./libs/libft/
+	make clean -C ./libs/printf/
+	make clean -C ./libs/minilibx-linux/
 	rm -rf ${OBJ_PATH}
 
 fclean : clean
+	make fclean -C ./libs/libft/
+	make fclean -C ./libs/printf/
 	rm -rf ${NAME}
 	
 re : fclean all
