@@ -6,7 +6,7 @@
 #    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/10/26 18:55:40 by zhamdouc         ###   ########.fr        #
+#    Updated: 2022/10/26 19:11:10 by zhamdouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,21 +22,21 @@ OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
 
 DEPS = $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
 
-INC = -I./includes/so_long.h
+INC = -I./includes/
 
 LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 
-FLAGS = -Wall -Werror -Wextra -MMD -MP -g3
+FLAGS = -Wall -Wextra -Werror -MMD -MP -g3
 
 ${NAME} : ${OBJS}
 	make -C ./libs/libft/
 	make -C ./libs/printf/
 	make -C ./libs/minilibx-linux/
-	gcc ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
+	$(CC) ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p ${OBJ_PATH}
-	gcc ${FLAGS} ${INC} -o $@ -c $<
+	$(CC) ${FLAGS} ${INC} -o $@ -c $<
 	
 all : ${NAME}
 
