@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/27 18:25:15 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/27 18:37:30 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+typedef struct	s_vars {
+	void	*mlx;
+	void	*win;
+}				t_vars;
 
-int	deal_key(int key, void *param)
+int	close1(int keycode, t_vars *vars)
 {
-	ft_putchar("X");
+	mlx_destroy_window(vars->mlx, vars->win);
+	keycode = keycode + 1 - 1;
 	return (0);
 }
 
 int	main(void)
 {
-	void	*mlx;
-	void	*win_ptr;
+	t_vars	vars;
 
-	mlx = mlx_init();
-	win_ptr = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	mlx_key_hook(win_ptr, deal_key, 0);
-	mlx_loop(mlx);
+	vars.mlx = mlx_init();
+	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
+	mlx_hook(vars.win, 2, 1L<<0, close1, &vars);
+	mlx_loop(vars.mlx);
 }
