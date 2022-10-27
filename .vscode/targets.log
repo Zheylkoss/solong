@@ -1,0 +1,427 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu Oct 27 23:56:09 2022
+
+# Variables
+
+# makefile (from 'Makefile', line 20)
+OBJ = ${SRC:.c=.o}
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 16)
+SRC = ft_main.c
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+SSH_AGENT_LAUNCHER = gnome-keyring
+# environment
+SNAP_INSTANCE_KEY = 
+# makefile (from 'Makefile', line 15)
+SRC_PATH = ./srcs/
+# environment
+LC_NAME = fr_FR.UTF-8
+# environment
+LC_NUMERIC = fr_FR.UTF-8
+# environment
+VSCODE_CWD = /home/zheylkoss/dev/solong
+# makefile (from 'Makefile', line 27)
+LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
+# environment
+LC_ADDRESS = fr_FR.UTF-8
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/111/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/zheylkoss/dev/solong
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+XDG_DATA_DIRS = /usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+OLDPWD = /home/zheylkoss/dev
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/zheylkoss/.config/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.3S0NU1
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# environment
+GNOME_TERMINAL_SERVICE = :1.127
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/zheylkoss/dev/solong
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from 'Makefile', line 17)
+SRCS = $(addprefix ${SRC_PATH}, ${SRC})
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# environment
+WAYLAND_DISPLAY = wayland-0
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# makefile (from 'obj/ft_main.d', line 1)
+MAKEFILE_LIST := Makefile obj/ft_main.d
+# environment
+SNAP_REEXEC = 
+# automatic
+@F = $(notdir $@)
+# environment
+ZSH = /home/zheylkoss/.oh-my-zsh
+# environment
+VSCODE_PID = 15256
+# environment
+XDG_SESSION_TYPE = wayland
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'Makefile', line 29)
+FLAGS = -Wall -Wextra -Werror -MMD -MP -g3
+# environment
+SESSION_MANAGER = local/zak:@/tmp/.ICE-unix/3674,unix/zak:/tmp/.ICE-unix/3674
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 21)
+OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=ibus
+# environment
+SHLVL = 1
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/b8917681_0e55_447a_96b9_8dca3ac33dd9
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+SNAP_COOKIE = _g9Xxo-ZHKVXMuGDWX7voNxXhphYwK3njlWLW_ZpDCkAZfwQ1CB4
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+# makefile (from 'Makefile', line 19)
+OBJ_PATH = obj/
+# default
+MAKEFILES := 
+# environment
+LC_MONETARY = fr_FR.UTF-8
+# automatic
+^F = $(notdir $^)
+# environment
+SNAP_USER_COMMON = /home/zheylkoss/snap/code/common
+# environment
+LC_TIME = fr_FR.UTF-8
+# environment
+SNAP = /snap/code/111
+# environment
+SNAP_REVISION = 111
+# environment
+SNAP_REAL_HOME = /home/zheylkoss
+# environment
+USERNAME = zheylkoss
+# environment
+GNOME_SETUP_DISPLAY = :1
+# environment
+LC_TELEPHONE = fr_FR.UTF-8
+# automatic
+?F = $(notdir $?)
+ 
+# makefile (from 'Makefile', line 25)
+INC = -I./includes/
+# makefile (from 'Makefile', line 13)
+NAME = so_long
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# automatic
++F = $(notdir $+)
+# environment
+LESS = -R
+# environment
+DESKTOP_SESSION = ubuntu
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = zheylkoss
+# environment
+SNAP_ARCH = amd64
+# makefile
+.DEFAULT_GOAL := so_long
+# environment
+SYSTEMD_EXEC_PID = 3976
+# environment
+DISPLAY = :0
+# environment
+USER = zheylkoss
+# environment
+GTK_MODULES = gail:atk-bridge
+# default
+MAKE_VERSION := 4.3
+# environment
+SNAP_DATA = /var/snap/code/111
+# environment
+SNAP_CONTEXT = _g9Xxo-ZHKVXMuGDWX7voNxXhphYwK3njlWLW_ZpDCkAZfwQ1CB4
+# environment
+LC_MEASUREMENT = fr_FR.UTF-8
+# environment
+PAGER = less
+# environment
+LC_PAPER = fr_FR.UTF-8
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+COLORTERM = truecolor
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/zheylkoss/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/zheylkoss
+# environment
+QT_IM_MODULE = ibus
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-4cc1def8-1.72.2-main.sock
+# environment
+TERM = xterm-256color
+# environment
+SNAP_NAME = code
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/111/usr/share/glib-2.0/schemas
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 23)
+DEPS = $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
+# environment
+SNAP_VERSION = d045a5ed
+# default
+SUFFIXES := 
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VTE_VERSION = 6800
+# environment
+SNAP_COMMON = /var/snap/code/common
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+SNAP_USER_DATA = /home/zheylkoss/snap/code/111
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+GDMSESSION = ubuntu
+# environment
+LC_IDENTIFICATION = fr_FR.UTF-8
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# variable set hash-table stats:
+# Load=132/1024=13%, Rehash=0, Collisions=26/179=15%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 66311, inode 3804038): 12 files, no impossibilities.
+# srcs (device 66311, inode 4326142): No files, no impossibilities so far.
+
+# 12 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+obj/%.o: srcs/%.c
+#  recipe to execute (from 'Makefile', line 38):
+	@mkdir -p ${OBJ_PATH}
+	clang ${FLAGS} ${INC} -o $@ -c $<
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
+# Files
+
+srcs/../includes/so_long.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-27 23:55:32.033221717
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-27 23:55:32.033221717
+#  File has been updated.
+#  Successfully updated.
+
+so_long: obj/ft_main.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-10-27 23:55:46.358733079
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 32):
+	make -C ./libs/libft/
+	make -C ./libs/printf/
+	make -C ./libs/minilibx-linux/
+	clang ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 44):
+	make clean -C ./libs/libft/
+	make clean -C ./libs/printf/
+	make clean -C ./libs/minilibx-linux/
+	rm -rf ${OBJ_PATH}
+
+includes/./../libs/minilibx-linux/mlx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-27 23:55:32.033221717
+#  File has been updated.
+#  Successfully updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+srcs/ft_main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-27 23:55:32.037222176
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: so_long
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 50):
+	make fclean -C ./libs/libft/
+	make fclean -C ./libs/printf/
+	rm -rf ${NAME}
+	
+
+# Not a target:
+obj/ft_main.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-27 23:55:44.466548487
+#  File has been updated.
+#  Successfully updated.
+
+obj/ft_main.o: srcs/ft_main.c srcs/ft_main.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'ft_main'
+#  Last modified 2022-10-27 23:55:44.466548487
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 38):
+	@mkdir -p ${OBJ_PATH}
+	clang ${FLAGS} ${INC} -o $@ -c $<
+	
+
+.SECONDARY: obj/ft_main.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=15/1024=1%, Rehash=0, Collisions=0/45=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 30 / storage = 302 B / avg = 10 B
+# current buf: size = 8162 B / used = 302 B / count = 30 / avg = 10 B
+ 
+
+# strcache performance: lookups = 62 / hit rate = 51%
+# hash-table stats:
+# Load=30/8192=0%, Rehash=0, Collisions=0/62=0%
+# Finished Make data base on Thu Oct 27 23:56:09 2022
+
+ 

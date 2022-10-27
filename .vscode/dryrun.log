@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/zheylkoss/dev/solong'
+make: 'so_long' is up to date.
+make: Leaving directory '/home/zheylkoss/dev/solong'
+ 

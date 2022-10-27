@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zheylkoss <zheylkoss@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/27 18:37:30 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/27 23:59:09 by zheylkoss        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 	t_vars	vars;
 
 	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
+	vars.win = mlx_new_window(vars.mlx, 500, 500, "Hello world!");
 	mlx_hook(vars.win, 2, 1L<<0, close1, &vars);
 	mlx_loop(vars.mlx);
 }
