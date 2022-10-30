@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zheylkoss <zheylkoss@student.42.fr>        +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/27 23:59:09 by zheylkoss        ###   ########.fr       */
+/*   Updated: 2022/10/28 18:54:25 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct	s_vars {
 int	close1(int keycode, t_vars *vars)
 {
 	mlx_destroy_window(vars->mlx, vars->win);
-	keycode = keycode + 1 - 1;
+	ft_printf("%d", keycode);
 	return (0);
 }
 
