@@ -1,3 +1,15 @@
 https://aurelienbrabant.fr/blog/getting-started-with-the-minilibx
 https://github.com/pasqualerossi
 https://qst0.github.io/ft_libgfx/man_mlx_pixel_put.html
+
+
+rectangle de 1
+un seul point de depart -> message d'erreur 
+multiple item possible, minimum 1
+multiple point de sortie mais minimum 1
+
+w 	= 119
+a 	= 97
+s	= 115
+d 	= 100
+esc	= 65307
