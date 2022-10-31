@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/31 16:29:32 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/31 17:41:46 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int	close1(int keycode, t_vars *vars)
 {
 	if (keycode == 65307)
-		mlx_destroy_window(vars->mlx, vars->win);
+		mlx_loop_end(vars->mlx);
 	if (keycode == 100)
 	{
 		put_floor(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img2);
@@ -56,7 +56,11 @@ int	close1(int keycode, t_vars *vars)
 // {
 // 	return (0);
 // }
-
+int	ft_close_mouse (t_vars *vars)
+{
+	mlx_loop_end(vars->mlx);
+	return (0);
+}
 int	main(void)
 {
 	t_vars	vars;
@@ -74,9 +78,13 @@ int	main(void)
 	vars.img3 = mlx_xpm_file_to_image(vars.mlx, vars.relative_path3, &vars.img_width, &vars.img_height);
 	vars.win = mlx_new_window(vars.mlx, vars.w_x, vars.w_y, "Hello world!");
 	mlx_hook(vars.win, 2, 1L<<0, close1, &vars);
+	mlx_hook(vars.win, 17, 1L<<17, ft_close_mouse, &vars);
 	// mlx_put_image_to_window(vars.mlx, vars.win, vars.img2, 400, 100);
 	put_floor(vars.w_x, vars.w_y, vars.mlx, vars.win, vars.img2);
 	put_tree(vars.w_x, vars.w_y, vars.mlx, vars.win, vars.img3);
 	mlx_put_image_to_window(vars.mlx, vars.win, vars.img, 80, 100);// mettre l'image sur le p, envoyer les coordonnes dans cette fonction et ensuite les envoyer au fonction de mouvement 
 	mlx_loop(vars.mlx);
+	mlx_destroy_window(vars.mlx, vars.win);
+	mlx_destroy_display(vars.mlx);
+	
 }
