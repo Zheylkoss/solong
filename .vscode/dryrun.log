@@ -1,10 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/zhamdouc/dev/solong'
-mkdir -p obj/
-clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/ft_main.o -c srcs/ft_main.c
-make -C ./libs/libft/
-make -C ./libs/printf/
-make -C ./libs/minilibx-linux/
-clang -Wall -Wextra -Werror -MMD -MP -g3 obj/ft_main.o -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz -o so_long
+make: 'so_long' is up to date.
 make: Leaving directory '/mnt/nfs/homes/zhamdouc/dev/solong'
  

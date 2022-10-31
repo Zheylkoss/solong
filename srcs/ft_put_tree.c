@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:57:43 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/31 12:58:01 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/31 13:36:32 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	put_tree(int w_x, int w_y, void *mlx, void *win, void *img3)
 	y = 0;
 	compteur_i = w_x / 70;
 	compteur_y = w_y / 70;
-	while (0 < compteur_i)//diviser la fenetre par la taille 
+	while (0 < compteur_i)
 	{
 		mlx_put_image_to_window(mlx, win, img3, i, 0);
 		i = i + 70;

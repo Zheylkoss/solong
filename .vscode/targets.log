@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Oct 31 11:53:43 2022
+# Make data base, printed on Mon Oct 31 13:35:57 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ OBJ = ${SRC:.c=.o}
 # environment
 XDG_SESSION_CLASS = user
 # makefile (from 'Makefile', line 16)
-SRC = ft_main.c
+SRC = ft_main.c ft_put_tree.c
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -243,7 +243,7 @@ VSCODE_PID = 406498
 # environment
 DBUS_STARTER_ADDRESS = unix:path=/run/user/102054/bus,guid=45689b6bcd4bf9847a8d122c635fa434
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=28/162=17%
+# Load=116/1024=11%, Rehash=0, Collisions=27/156=17%
 
 # Pattern-specific Variable Values
 
@@ -252,9 +252,9 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/102054/bus,guid=45689b6bcd4bf9847a8d1
 # Directories
 
 # . (device 60, inode 259589687): 13 files, no impossibilities.
-# srcs (device 60, inode 259598603): 3 files, no impossibilities so far.
+# srcs (device 60, inode 259598603): 4 files, no impossibilities so far.
 
-# 16 files, no impossibilities in 2 directories.
+# 17 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -274,17 +274,33 @@ all: so_long
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 
 .PHONY: all clean fclean re
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-.SECONDARY: obj/ft_main.o
- 
+obj/ft_put_tree.o: srcs/ft_put_tree.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'ft_put_tree'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 38):
+	@mkdir -p ${OBJ_PATH}
+	clang ${FLAGS} ${INC} -o $@ -c $<
+	
+
+# Not a target:
+srcs/ft_put_tree.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-31 12:58:01.852049165
+#  File has been updated.
+#  Successfully updated.
+
+.SECONDARY: obj/ft_main.o obj/ft_put_tree.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -292,7 +308,7 @@ all: so_long
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-31 11:36:14.217434928
+#  Last modified 2022-10-31 12:59:08.835441892
 #  File has been updated.
 #  Successfully updated.
 
@@ -342,26 +358,7 @@ obj/ft_main.o: srcs/ft_main.c
 #  Implicit/static pattern stem: 'ft_main'
 #  File is an intermediate prerequisite.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/ft_main.o
-# automatic
-# % := 
-# automatic
-# * := ft_main
-# automatic
-# + := srcs/ft_main.c
-# automatic
-# | := 
-# automatic
-# < := srcs/ft_main.c
-# automatic
-# ^ := srcs/ft_main.c
-# automatic
-# ? := srcs/ft_main.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 38):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
@@ -370,37 +367,42 @@ obj/ft_main.o: srcs/ft_main.c
 # Not a target:
 srcs/ft_main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-31 11:36:14.513436735
+#  Last modified 2022-10-31 12:57:41.385929171
 #  File has been updated.
 #  Successfully updated.
 
-so_long: obj/ft_main.o
+so_long: obj/ft_main.o obj/ft_put_tree.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-10-31 11:36:14.510436717
+#  Last modified 2022-10-31 12:59:20.757511792
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 32):
 	make -C ./libs/libft/
 	make -C ./libs/printf/
 	make -C ./libs/minilibx-linux/
 	clang ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
 
+# Not a target:
+obj/ft_put_tree.d:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
 # files hash-table stats:
-# Load=13/1024=1%, Rehash=0, Collisions=0/38=0%
+# Load=16/1024=2%, Rehash=0, Collisions=0/47=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 252 B / avg = 8 B
-# current buf: size = 8162 B / used = 252 B / count = 30 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 35 / storage = 333 B / avg = 9 B
+# current buf: size = 8162 B / used = 333 B / count = 35 / avg = 9 B
 
-# strcache performance: lookups = 57 / hit rate = 47%
+# strcache performance: lookups = 65 / hit rate = 46%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=2/57=4%
-# Finished Make data base on Mon Oct 31 11:53:43 2022
+# Load=35/8192=0%, Rehash=0, Collisions=2/65=3%
+# Finished Make data base on Mon Oct 31 13:35:57 2022
 
  
