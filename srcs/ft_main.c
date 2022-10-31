@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/31 15:58:14 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/31 16:29:32 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	close1(int keycode, t_vars *vars)
 {
 	if (keycode == 65307)
 		mlx_destroy_window(vars->mlx, vars->win);
-	ft_printf("%d", keycode);
 	if (keycode == 100)
 	{
 		put_floor(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img2);
