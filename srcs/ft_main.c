@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/30 18:47:16 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:57:41 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,24 @@ int	main(void)
 	void	*win;
 	void	*img;
 	void	*img2;
+	void	*img3;
 	char	*relative_path = "./image/Attack2.xpm";
 	char	*relative_path2 = "./image/Attack3.xpm";
+	char	*relative_path3 = "./image/arbre1.xpm";
 	int		img_width;
 	int		img_height;
+	int w_y;
+	int w_x;
 
+	w_x = 500;
+	w_y = 500;
 	mlx = mlx_init();
 	img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
 	img2 = mlx_xpm_file_to_image(mlx, relative_path2, &img_width, &img_height);
-	win = mlx_new_window(mlx, 500, 500, "Hello world!");
-	mlx_put_image_to_window(mlx, win, img, 0, 0);
-	mlx_put_image_to_window(mlx, win, img2, 100, 1);
+	img3 = mlx_xpm_file_to_image(mlx, relative_path3, &img_width, &img_height);
+	win = mlx_new_window(mlx, w_x, w_y, "Hello world!");
+	// mlx_put_image_to_window(mlx, win, img, 200, 100);
+	// mlx_put_image_to_window(mlx, win, img2, 400, 100);
+	put_tree(w_x, w_y, mlx, win, img3);
 	mlx_loop(mlx);
 }

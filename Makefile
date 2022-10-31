@@ -6,14 +6,14 @@
 #    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/10/27 18:36:35 by zhamdouc         ###   ########.fr        #
+#    Updated: 2022/10/31 12:59:08 by zhamdouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRC_PATH = ./srcs/
-SRC = ft_main.c
+SRC = ft_main.c ft_put_tree.c
 SRCS = $(addprefix ${SRC_PATH}, ${SRC})
 		
 OBJ_PATH	= obj/
