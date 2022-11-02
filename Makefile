@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
+#    By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/11/02 12:03:10 by zhamdouc         ###   ########.fr        #
+#    Updated: 2022/11/02 12:40:34 by zakariyaham      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,13 @@ DEPS = $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
 
 INC = -I./includes/
 
-LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
+LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 
 FLAGS = -Wall -Wextra -Werror -MMD -MP -g3
 
 ${NAME} : ${OBJS}
 	make -C ./libs/libft/
-#	make -C ./libs/gnl/
+	make -C ./libs/gnl/
 	make -C ./libs/printf/
 	make -C ./libs/minilibx-linux/
 	clang ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}

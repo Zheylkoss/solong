@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 12:14:56 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/02 12:40:49 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,10 @@ int	ft_check(int argc, char **argv)
 	return (0);
 }
 
+// int	ft_check_map(int argc, char **argv)
+// {
+// 	int	fd;
+
+// 	fd = open(argv[1], O_RDWR);
+
+// }
