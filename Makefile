@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+         #
+#    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/11/02 11:46:39 by zakariyaham      ###   ########.fr        #
+#    Updated: 2022/11/02 12:03:10 by zhamdouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRC_PATH = ./srcs/
-SRC = ft_main.c ft_put_tree.c
+SRC = ft_main.c ft_put_tree.c ft_parsing.c
 SRCS = $(addprefix ${SRC_PATH}, ${SRC})
 
 OBJ_PATH	= obj/
@@ -24,13 +24,13 @@ DEPS = $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
 
 INC = -I./includes/
 
-LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
+LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 
 FLAGS = -Wall -Wextra -Werror -MMD -MP -g3
 
 ${NAME} : ${OBJS}
 	make -C ./libs/libft/
-	make -C ./libs/gnl/
+#	make -C ./libs/gnl/
 	make -C ./libs/printf/
 	make -C ./libs/minilibx-linux/
 	clang ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 11:54:43 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/11/02 12:14:56 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,25 @@ int	ft_check(int argc, char **argv)
 		ft_printf("nombre d'argument incorrect");
 		return (0);
 	}
-	i = ft_strlen(argv[2]);
-	while(argv[2][i - 4])
+	i = ft_strlen(argv[1]);
+	if (i == 4)
 	{
-		if (argv[2][i - 4] == tab[j])
+		ft_printf("error");
+		return (0);
+	}
+	while(argv[1][i - 4])
+	{
+		if (argv[1][i - 4] == tab[j])
 			j++;
 		i++;
 	}
-	if (j != 3)
+	if (j != 4)
+	{
+		ft_printf("type de fichier incorrect");
 		return (1);
+	}
 	else
 		ft_printf("ok");
+	return (0);
 }
+

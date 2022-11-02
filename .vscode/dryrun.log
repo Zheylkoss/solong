@@ -1,5 +1,5 @@
 make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/zakariyahamdouchi/dev/solong'
-make: `so_long' is up to date.
-make: Leaving directory `/Users/zakariyahamdouchi/dev/solong'
+make: Entering directory '/mnt/nfs/homes/zhamdouc/dev/solong'
+make: 'so_long' is up to date.
+make: Leaving directory '/mnt/nfs/homes/zhamdouc/dev/solong'
  
