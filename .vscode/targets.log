@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Wed Nov  2 11:28:52 2022
+# Make data base, printed on Wed Nov  2 11:46:57 2022
 
 # Variables
 
@@ -15,6 +16,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+ 
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # makefile (from `Makefile', line 20)
@@ -172,13 +174,14 @@ MAKEFILES :=
 # environment
 ITERM_PROFILE = Default
 # environment
+ 
 PAGER = less
 # environment
 LC_ALL = C
 # makefile (from `Makefile', line 19)
 OBJ_PATH = obj/
 # makefile (from `Makefile', line 27)
-LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
+LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 # automatic
 ^F = $(notdir $^)
 # makefile (from `Makefile', line 23)
@@ -213,7 +216,7 @@ VSCODE_PID = 2677
 # Implicit Rules
 
 obj/%.o: ./srcs/%.c
-#  commands to execute (from `Makefile', line 38):
+#  commands to execute (from `Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
 	
@@ -245,7 +248,7 @@ obj/ft_put_tree.o: srcs/ft_put_tree.c srcs/ft_put_tree.c srcs/../includes/so_lon
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 38):
+#  commands to execute (from `Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
 	
@@ -273,7 +276,7 @@ srcs/ft_put_tree.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-02 11:28:45
+#  Last modified 2022-11-02 11:46:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -292,15 +295,15 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 50):
+#  commands to execute (from `Makefile', line 52):
 	make fclean -C ./libs/libft/
 	make fclean -C ./libs/printf/
+	make clean -C ./libs/gnl/
 	rm -rf ${NAME}
 	
 
 # Not a target:
 obj/ft_main.d:
- 
 #  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
 #  Last modified 2022-11-02 11:28:45
@@ -326,9 +329,10 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 44):
+#  commands to execute (from `Makefile', line 45):
 	make clean -C ./libs/libft/
 	make clean -C ./libs/printf/
+	make clean -C ./libs/gnl/
 	make clean -C ./libs/minilibx-linux/
 	rm -rf ${OBJ_PATH}
 	
@@ -341,7 +345,7 @@ obj/ft_main.o: srcs/ft_main.c srcs/ft_main.c srcs/../includes/so_long.h includes
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 38):
+#  commands to execute (from `Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
 	
@@ -364,6 +368,7 @@ so_long: obj/ft_main.o obj/ft_put_tree.o
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 32):
 	make -C ./libs/libft/
+	make -C ./libs/gnl/
 	make -C ./libs/printf/
 	make -C ./libs/minilibx-linux/
 	clang ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
@@ -402,12 +407,13 @@ obj/ft_put_tree.d:
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
+ 
 
 # # of strings in strcache: 3
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4055 / max = 4055 / min = 4055 / avg = 4055
 
-# Finished Make data base on Wed Nov  2 11:28:52 2022
+# Finished Make data base on Wed Nov  2 11:46:57 2022
 
  

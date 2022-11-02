@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 11:40:37 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/11/02 11:54:43 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,6 @@ int	ft_check(int argc, char **argv)
 	}
 	if (j != 3)
 		return (1);
+	else
+		ft_printf("ok");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/31 17:41:46 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/02 11:53:34 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // 	void	*mlx;
 // 	void	*win;
 // }				t_vars;
-
+/*
 int	close1(int keycode, t_vars *vars)
 {
 	if (keycode == 65307)
@@ -61,10 +61,11 @@ int	ft_close_mouse (t_vars *vars)
 	mlx_loop_end(vars->mlx);
 	return (0);
 }
+
 int	main(void)
 {
 	t_vars	vars;
- 
+
 	vars.x_pers = 80;
 	vars.y_pers = 100;
 	vars.w_x = 80 * 10;
@@ -82,9 +83,15 @@ int	main(void)
 	// mlx_put_image_to_window(vars.mlx, vars.win, vars.img2, 400, 100);
 	put_floor(vars.w_x, vars.w_y, vars.mlx, vars.win, vars.img2);
 	put_tree(vars.w_x, vars.w_y, vars.mlx, vars.win, vars.img3);
-	mlx_put_image_to_window(vars.mlx, vars.win, vars.img, 80, 100);// mettre l'image sur le p, envoyer les coordonnes dans cette fonction et ensuite les envoyer au fonction de mouvement 
+	mlx_put_image_to_window(vars.mlx, vars.win, vars.img, 80, 100);// mettre l'image sur le p, envoyer les coordonnes dans cette fonction et ensuite les envoyer au fonction de mouvement
 	mlx_loop(vars.mlx);
 	mlx_destroy_window(vars.mlx, vars.win);
 	mlx_destroy_display(vars.mlx);
-	
+
+}*/
+
+int	main(int argc, char **argv)
+{
+	ft_check(argc, argv);
+	return (0);
 }
