@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 18:42:32 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/06/16 18:58:47 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/02 12:51:18 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*s2;
 
 	s2 = (char *) s;
-	i = ft_strlen((char *)s);
+	i = ft_strlen2((char *)s);
 	if ((start >= i) || len == 0)
 	{
 		s1 = malloc (1 * sizeof(char));
@@ -54,7 +54,7 @@ static char	*sub(char *s2, char *s1, size_t len, int start)
 	return (s1);
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen2(const char *str)
 {
 	size_t	i;
 
@@ -71,8 +71,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		a;
 	int		y;
 
-	i = ft_strlen ((char *)s1);
-	a = ft_strlen ((char *)s2);
+	i = ft_strlen2 ((char *)s1);
+	a = ft_strlen2 ((char *)s2);
 	s = malloc ((i + a + 1) * sizeof(char));
 	if (s == NULL)
 		return (NULL);

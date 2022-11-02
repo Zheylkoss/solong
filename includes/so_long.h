@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 12:38:28 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/11/02 12:48:28 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include "./../libs/printf/libftprintf.h"
+#include "./../libs/gnl/get_next_line.h"
 
 typedef struct	s_vars
 {
@@ -39,5 +40,6 @@ typedef struct	s_vars
 void	put_tree(int w_x, int w_y, void *mlx, void *win, void *img3);
 void	put_floor(int w_x, int w_y, void *mlx, void *win, void *img2);
 int	ft_check(int argc, char **argv);
+int	ft_check_map(char **argv);
 
 #endif
