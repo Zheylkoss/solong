@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 12:52:35 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:18:40 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,3 +96,4 @@ int	main(int argc, char **argv)
 		ft_check_map(argv);
 	return (0);
 }
+
