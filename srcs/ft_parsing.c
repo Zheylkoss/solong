@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 18:33:47 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:15:52 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,36 +80,10 @@ int	ft_check_map(char **argv)
 	}
 	else
 		return (1);
-	right_road(tab, 2, 1);//si la position initiale est egale a 0 augmenter j jusqua la fin puis essayer la deuxieme colonne
 	//freetab
 	return (0);
 }
 
-int	right_road(char **tab, int i, int j)
-{
-	if (condition (tab, e, c, p) == 0)
-		return (0);
-	if (tab[i][j + 1] == 0)
-	{
-		j = j + 1;
-		right_road(tab, i, j);
-	}
-	if (tab[i + 1][j] == 0)
-	{
-		i = i + 1;
-		right_road(tab, i, j);
-	}
-	if (tab[i][j + 1] == 0)
-	{
-		j = j + 1;
-		right_road(tab, i, j);
-	}
-	if (tab[i][j + 1] == 0)
-	{
-		j = j + 1;
-		right_road(tab, i, j);
-	}
-}
 
 int	check_items(char **tab, int i)
 {
