@@ -6,13 +6,14 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 14:03:58 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:30:47 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../includes/so_long.h"
 
 int	fill_tab(char **argv, char **tab, int i, int fd);
+int	check_lign(char **tab, int i);
 
 int	ft_check(int argc, char **argv)
 {
@@ -105,8 +106,45 @@ int	ft_check_map(char **argv)
 	tab = malloc(i * sizeof(char *));
 		// if (tab == NULL)
 		// 	return (freeatab(tab), 1);//reprendre la fonction de push_swap pour free
-	fill_tab(argv, tab, i, fd);
+	if (fill_tab(argv, tab, i, fd) == 0)
+		check_lign(tab, i);
+	else
+		return (1);
 	ft_printf("ok");
+	return (0);
+}
+
+int	check_lign(char **tab, int i)
+{
+	int j;
+	int	pos;
+	int	len;
+	
+	j = 1;
+	while (j < i)
+	{
+		pos = 1;
+		len = ft_strlen(tab[j]);
+		if (tab[j][0] != '1' && tab[j][len] != '1')
+			return (1);
+		while (tab[j][pos])
+		{
+			if (tab[j][pos] != '0')
+				return (1);
+			pos++;
+		}
+		j++;
+	}
+	i = 0;
+	while (tab[j][i])
+	{
+		if (tab[j][i] != '1' && tab[j][i] != '\n')//attention au cas ou il y aura juste un "\n"
+		{
+			ft_printf("erreur de map\n");
+			return (1);
+		}
+		i++;
+	}
 	return (0);
 }
 
