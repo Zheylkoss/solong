@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/04 17:23:02 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/04 19:18:56 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,25 +57,25 @@ int	ft_check_map(char **argv, t_list *list)
 	int n;
 
 
-	(*list).tab = NULL;
-	(*list).i = 0;
-	(*list).fd = 0;
-	(*list).fd = open(argv[1], O_RDWR);// securite ?
- 	taille = get_next_line ((*list).fd);
+	list->tab = NULL;
+	list->i = 0;
+	list->fd = 0;
+	list->fd = open(argv[1], O_RDWR);// securite ?
+ 	taille = get_next_line (list->fd);
 	while (taille)
 	{
-		(*list).i++;
-		taille = get_next_line ((*list).fd);
+		list->i++;
+		taille = get_next_line (list->fd);
 	}
-	close((*list).fd);//securite ??
-	(*list).tab = malloc((*list).i * sizeof(char *));
+	close(list->fd);//securite ??
+	list->tab = malloc(list->i * sizeof(char *));
 		// if (tab == NULL)
 		// 	return (freeatab(tab), 1);//reprendre la fonction de push_swap pour free
-	if (fill_tab(argv, (*list).tab, (*list).i, (*list).fd) == 0)
+	if (fill_tab(argv, list->tab, list->i, list->fd) == 0)
 	{
-		n = check_len((*list).tab, (*list).i);
-		n = check_lign((*list).tab, (*list).i);
-		n = check_items((*list).tab, (*list).i, list);//return le nombre de E et C Pour le right road
+		n = check_len(list->tab, list->i);
+		n = check_lign(list->tab, list->i);
+		n = check_items(list->tab, list->i, list);//return le nombre de E et C Pour le right road
 	}
 	else
 		return (1);
@@ -90,25 +90,25 @@ int	check_items(char **tab, int i, t_list *list)
 	int pos;
 
 	j = 0;
-	(*list).e = 0;
-	(*list).c = 0;
-	(*list).p = 0;
+	list->e = 0;
+	list->c = 0;
+	list->p = 0;
 	while (j < i)
 	{
 		pos = 0;
 		while(tab[j][pos])
 		{
 			if (tab[j][pos] == 'E')
-				(*list).e++;
+				list->e++;
 			if (tab[j][pos] == 'C')
-				(*list).c++;
+				list->c++;
 			if (tab[j][pos] == 'P')
-				(*list).p++;
+				list->p++;
 			pos++;
 		}
 		j++;
 	}
-	if ((*list).p != 1 || (*list).c < 1 || (*list).e != 1)
+	if (list->p != 1 || list->c < 1 || list->e != 1)
 	{
 		ft_printf("erreur item");
 		return (1);
