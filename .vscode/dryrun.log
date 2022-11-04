@@ -1,8 +1,11 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/zhamdouc/dev/solong'
 mkdir -p obj/
 clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/ft_main.o -c srcs/ft_main.c
- 
+mkdir -p obj/
+clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/ft_put_tree.o -c srcs/ft_put_tree.c
+mkdir -p obj/
+clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/ft_parsing.o -c srcs/ft_parsing.c
 mkdir -p obj/
 clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/path.o -c srcs/path.c
 make -C ./libs/libft/

@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:45:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/04 17:47:24 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/04 19:02:52 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 int	findpath(int i, int j, t_list *list);
 int path_fill(t_list *list, int **matrix, int **path);
+int	check_path(t_list *list);
 
 int path_valid(t_list  *list)
 {
 	int i;
 	int	j;
+	int	z;
+	int y;
 
 	(*list).ec = (*list).e + (*list).c;
 	(*list).matrix = malloc ((*list).i * sizeof(int *));
@@ -30,14 +33,25 @@ int path_valid(t_list  *list)
 	path_fill(list, (*list).matrix, (*list).path);
 	ft_printf("avant : ec -> %d\n", (*list).ec);
 	// faire une boucle sur ec et appele a chaque fois la fonction, clear la path (renvoyer la position de P), faire un break si je retoure 0 
-	while ((*list).ec != 0)
+	// while ((*list).ec != 0)
+	// {
+	while (list->ec != 0)
 	{
+		z = 0;
 		i = (*list).j_p;
 		j = (*list).a_p;
 		if (findpath(i, j, list) == 0)
 			break;
-		//clear path, remttre tout a 0
-		
+		while (z < 10)
+		{
+			y = 0;
+			while (y < 7)
+			{
+				(*list).path[z][y] = 0;
+				y++;
+			}
+			z++;
+		}
 	}
 	ft_printf("apres : ec -> %d\n", (*list).ec);
 	if ((*list).ec == 0)
@@ -49,17 +63,16 @@ int path_valid(t_list  *list)
 //trouver la position de P
 int	findpath(int i, int j, t_list *list)
 {
-	if ((*list).path[i][j] == 8)
-		return (1);
-	if ((*list).matrix[i][j] == 2)
+	if ((*list).path[i][j] == 0 && (*list).matrix[i][j] != 1 && (*list).path[i][j] != 8)
 	{
-		(*list).path[i][j] = 0;
-		(*list).matrix[i][j] = 0;
-		(*list).ec--;
-		return (2);
-	}
-	if ((*list).matrix[i][j] == 0)
-	{
+		(*list).path[i][j] = 8;
+		if ((*list).matrix[i][j] == 2)
+		{
+			(*list).path[i][j] = 0;
+			(*list).matrix[i][j] = 0;
+			(*list).ec--;
+			return (1);
+		}
 		(*list).path[i][j] = 8;
 		if (findpath(i - 1, j, list) == 1)
 			return (1);
@@ -76,7 +89,30 @@ int	findpath(int i, int j, t_list *list)
 
 	return (0);
 }
-//appeler la fonction path fill
+
+int	check_path(t_list *list)
+{
+	int z;
+	int y;
+	int a;
+
+	a = 0;
+	z = 0;
+	while (z < 10)
+	{
+		y = 0;
+		while (y < 7)
+		{
+			if ((*list).matrix[z][y] != 1 && (*list).path[z][y] == 8)
+				a++;
+			else
+				return (1);
+			y++;
+		}
+		z++;
+	}
+	return (0);
+}
 
 int path_fill(t_list *list, int **matrix, int **path)
 {
