@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 12:48:28 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:40:59 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,24 @@ typedef struct	s_vars
 	int		x_pers;
 	int		y_pers;
 }				t_vars;
+typedef struct	s_list
+{
+	int		i;
+	int		e;
+	int		c;
+	int		p;
+	int		fd;
+	char **tab;
+	int		a_p;
+	int		j_p;
+	int		ec;
+	int		**path;
+	int		**matrix;
+}				t_list;
 void	put_tree(int w_x, int w_y, void *mlx, void *win, void *img3);
 void	put_floor(int w_x, int w_y, void *mlx, void *win, void *img2);
 int	ft_check(int argc, char **argv);
-int	ft_check_map(char **argv);
+int	ft_check_map(char **argv, t_list *list);
+int path_valid(t_list *list);
 
 #endif

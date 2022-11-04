@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+         #
+#    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/11/02 12:40:34 by zakariyaham      ###   ########.fr        #
+#    Updated: 2022/11/04 11:48:56 by zhamdouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRC_PATH = ./srcs/
-SRC = ft_main.c ft_put_tree.c ft_parsing.c
+SRC = ft_main.c ft_put_tree.c ft_parsing.c path.c
 SRCS = $(addprefix ${SRC_PATH}, ${SRC})
 
 OBJ_PATH	= obj/

@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 19:15:52 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/04 12:25:04 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	fill_tab(char **argv, char **tab, int i, int fd);
 int	check_lign(char **tab, int i);
 int	check_len(char **tab, int i);
-int	check_items(char **tab, int i);
+int	check_items(char **tab, int i, t_list *list);
 
 int	ft_check(int argc, char **argv)
 {
@@ -51,68 +51,63 @@ int	ft_check(int argc, char **argv)
 	return (0);
 }
 
-int	ft_check_map(char **argv)
+int	ft_check_map(char **argv, t_list *list)
 {
-	int	fd;
-	char **tab;
 	char *taille;
-	int i;
 
-	tab = NULL;
-	i = 0;
-	fd = 0;
-	fd = open(argv[1], O_RDWR);// securite ?
- 	taille = get_next_line (fd);
+
+	(*list).tab = NULL;
+	(*list).i = 0;
+	(*list).fd = 0;
+	(*list).fd = open(argv[1], O_RDWR);// securite ?
+ 	taille = get_next_line ((*list).fd);
 	while (taille)
 	{
-		i++;
-		taille = get_next_line (fd);
+		(*list).i++;
+		taille = get_next_line ((*list).fd);
 	}
-	close(fd);//securite ??
-	tab = malloc(i * sizeof(char *));
+	close((*list).fd);//securite ??
+	(*list).tab = malloc((*list).i * sizeof(char *));
 		// if (tab == NULL)
 		// 	return (freeatab(tab), 1);//reprendre la fonction de push_swap pour free
-	if (fill_tab(argv, tab, i, fd) == 0)
+	if (fill_tab(argv, (*list).tab, (*list).i, (*list).fd) == 0)
 	{
-		check_len(tab, i);
-		check_lign(tab, i);
-		check_items(tab, i);//return le nombre de E et C Pour le right road
+		check_len((*list).tab, (*list).i);
+		check_lign((*list).tab, (*list).i);
+		check_items((*list).tab, (*list).i, list);//return le nombre de E et C Pour le right road
 	}
 	else
 		return (1);
-	//freetab
+	//freetab si probleme car on utilise le tab dans path_valid
 	return (0);
 }
 
 
-int	check_items(char **tab, int i)
+int	check_items(char **tab, int i, t_list *list)
 {
 	int	j;
-	int	e;
-	int	c;
-	int	p;
 	int pos;
 
 	j = 0;
-	e = 0;
-	c = 0;
-	p = 0;
+	(*list).e = 0;
+	(*list).c = 0;
+	(*list).p = 0;
 	while (j < i)
 	{
 		pos = 0;
 		while(tab[j][pos])
 		{
 			if (tab[j][pos] == 'E')
-				e++;
+				(*list).e++;
 			if (tab[j][pos] == 'C')
-				c++;
+				(*list).c++;
 			if (tab[j][pos] == 'P')
-				p++;
+				(*list).p++;
 			pos++;
 		}
 		j++;
 	}
-	if (p != 1 || c < 1 || e < 1)
+	if ((*list).p != 1 || (*list).c < 1 || (*list).e != 1)
 	{
 		ft_printf("erreur item");
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/02 18:18:40 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/04 12:11:21 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // 	void	*mlx;
 // 	void	*win;
 // }				t_vars;
-/*
+
 int	close1(int keycode, t_vars *vars)
 {
 	if (keycode == 65307)
@@ -62,7 +62,7 @@ int	ft_close_mouse (t_vars *vars)
 	return (0);
 }
 
-int	main(void)
+int	picture(void)
 {
 	t_vars	vars;
 
@@ -87,13 +87,26 @@ int	main(void)
 	mlx_loop(vars.mlx);
 	mlx_destroy_window(vars.mlx, vars.win);
 	mlx_destroy_display(vars.mlx);
+	return (0);
 
-}*/
+}
 
 int	main(int argc, char **argv)
 {
+	t_list	list;
+	
+	list.i = 0;
 	if (ft_check(argc, argv) == 0)
-		ft_check_map(argv);
+	{
+		if (ft_check_map(argv, &list) == 0)
+		{
+			if (path_valid(&list) == 0)
+				picture();
+		}
+	}
+	ft_printf("%d", list.i);
+	ft_printf("%d", list.p);
+	ft_printf("%d", list.c);
 	return (0);
 }
 
