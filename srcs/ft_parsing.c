@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/04 12:25:04 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:23:02 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ int	ft_check(int argc, char **argv)
 		ft_printf("ok\n");
 	return (0);
 }
-
+//renvoyer une valeur differente (n) pour chaque erreur
 int	ft_check_map(char **argv, t_list *list)
 {
 	char *taille;
+	int n;
 
 
 	(*list).tab = NULL;
@@ -72,14 +73,14 @@ int	ft_check_map(char **argv, t_list *list)
 		// 	return (freeatab(tab), 1);//reprendre la fonction de push_swap pour free
 	if (fill_tab(argv, (*list).tab, (*list).i, (*list).fd) == 0)
 	{
-		check_len((*list).tab, (*list).i);
-		check_lign((*list).tab, (*list).i);
-		check_items((*list).tab, (*list).i, list);//return le nombre de E et C Pour le right road
+		n = check_len((*list).tab, (*list).i);
+		n = check_lign((*list).tab, (*list).i);
+		n = check_items((*list).tab, (*list).i, list);//return le nombre de E et C Pour le right road
 	}
 	else
 		return (1);
 	//freetab si probleme car on utilise le tab dans path_valid
-	return (0);
+	return (n);
 }
 
 

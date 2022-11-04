@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:45:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/04 15:44:45 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:47:24 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,18 @@ int path_valid(t_list  *list)
 		// if (matrix == NULL)
 		// return (NULL);
 	path_fill(list, (*list).matrix, (*list).path);
-	i = (*list).j_p;
-	j = (*list).a_p;
-	findpath(i, j, list);
+	ft_printf("avant : ec -> %d\n", (*list).ec);
+	// faire une boucle sur ec et appele a chaque fois la fonction, clear la path (renvoyer la position de P), faire un break si je retoure 0 
+	while ((*list).ec != 0)
+	{
+		i = (*list).j_p;
+		j = (*list).a_p;
+		if (findpath(i, j, list) == 0)
+			break;
+		//clear path, remttre tout a 0
+		
+	}
+	ft_printf("apres : ec -> %d\n", (*list).ec);
 	if ((*list).ec == 0)
 		ft_printf("un chemin vers la vitore existe \n");
 	else
@@ -41,14 +50,13 @@ int path_valid(t_list  *list)
 int	findpath(int i, int j, t_list *list)
 {
 	if ((*list).path[i][j] == 8)
-		return (0);
+		return (1);
 	if ((*list).matrix[i][j] == 2)
 	{
 		(*list).path[i][j] = 0;
 		(*list).matrix[i][j] = 0;
 		(*list).ec--;
-		findpath(i, j,list);
-		return (1);
+		return (2);
 	}
 	if ((*list).matrix[i][j] == 0)
 	{
@@ -57,17 +65,15 @@ int	findpath(int i, int j, t_list *list)
 			return (1);
 		if (findpath(i, j - 1, list) == 1)
 			return (1);
-		if (findpath(i + 1, j, list) == 1)
-			return (1);
 		if (findpath(i, j + 1, list) == 1)
+			return (1);
+		if (findpath(i + 1, j, list) == 1)
 			return (1);
 		(*list).path[i][j] = 1;
 	}
 	if ((*list).ec == 0)
-	{
-		ft_printf("un chemin existe");
 		return (3);
-	}
+
 	return (0);
 }
 //appeler la fonction path fill
