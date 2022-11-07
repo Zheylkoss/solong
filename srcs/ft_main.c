@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/07 15:21:28 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:26:14 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,36 +47,27 @@ int	close1(int keycode, t_list *list)
 		mlx_loop_end(list->mlx);
 	if (keycode == 100)
 	{
-		//put_floor(list->w_x, list->w_y, list->mlx, list->win, list->img2);
 		if (check_mouv_d(list) == 0)
 			list->x_pers = list->x_pers + 64;
-		put_tree(list);
-	//	mlx_put_image_to_window(list->mlx, list->win, list->img, list->x_pers, list->y_pers);
 	}
 	if (keycode == 97)
 	{
-		//put_floor(list->w_x, list->w_y, list->mlx, list->win, list->img2);
 		if (check_mouv_a(list) == 0)
 			list->x_pers = list->x_pers - 64;
-		put_tree(list);
-		mlx_put_image_to_window(list->mlx, list->win, list->img, list->x_pers, list->y_pers);
 	}
 	if (keycode == 115)
 	{
-		//put_floor(list->w_x, list->w_y, list->mlx, list->win, list->img2);
 		if (check_mouv_s(list) == 0)
 			list->y_pers = list->y_pers + 64;
-		put_tree(list);
-		mlx_put_image_to_window(list->mlx, list->win, list->img, list->x_pers, list->y_pers);
 	}
 	if (keycode == 119)
 	{
-		//put_floor(list->w_x, list->w_y, list->mlx, list->win, list->img2);
 		if (check_mouv_w(list) == 0)
 			list->y_pers = list->y_pers - 64;
-		put_tree(list);
-		mlx_put_image_to_window(list->mlx, list->win, list->img, list->x_pers, list->y_pers);
 	}
+	put_tree(list);
+	if (list->ec_copy == 0)
+		mlx_loop_end(list->mlx);
 	return (0);
 }
 
@@ -90,12 +81,39 @@ int	ft_close_mouse (t_list *list)
 	return (0);
 }
 
+int	found_p(t_list *list)
+{
+	int a;
+	int	b;
+	int d;
+
+	d = 0;
+	a = 0;
+	b = 0;
+	while (b < list->i)
+	{
+		d = ft_strlen(list->tab[a]);
+		while (b < d)
+		{
+			if (list->tab[a][b] == 'P')
+			{
+				list->x_pers = 64 * b;
+				list->y_pers = 64 * a;
+				return (0);
+			}
+			b++;
+		}
+		b = 0;
+		a++;
+	}
+	return (0);
+}
+
 int	picture(t_list *list)
 {
 	int	len;
 
-	list->x_pers = 64;
-	list->y_pers = 64;
+	found_p(list);
 	list->w_x = 64 * list->i;
 	len = ft_strlen(list->tab[0]);
 	list->w_y = 100* len;
@@ -112,10 +130,7 @@ int	picture(t_list *list)
 	list->img5 = mlx_xpm_file_to_image(list->mlx, list->relative_path5, &list->img_width, &list->img_height);
 	list->win = mlx_new_window(list->mlx, list->w_x, list->w_y, "Hello world!");
 	mlx_hook(list->win, 17, 1L<<17, ft_close_mouse, list);
-	// mlx_put_image_to_window(vars.mlx, vars.win, vars.img2, 400, 100);
-	//put_floor(vars.w_x, vars.w_y, vars.mlx, vars.win, vars.img2);
 	put_tree(list);
-	//mlx_put_image_to_window(vars.mlx, vars.win, vars.img, 80, 100);// mettre l'image sur le p, envoyer les coordonnes dans cette fonction et ensuite les envoyer au fonction de mouvement
 	mlx_hook(list->win, 2, 1L<<0, close1, list);
 	mlx_loop(list->mlx);
 	mlx_destroy_window(list->mlx, list->win);
@@ -142,7 +157,7 @@ int	main(int argc, char **argv)
 				picture(&list);
 		}
 	}
-	//ft_printf("%d", list.i);
+	ft_printf("%d\n", list.ec_copy);
 	while (b < list.i)
 	{
 		d = ft_strlen(list.tab[b]);

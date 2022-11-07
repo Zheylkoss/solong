@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/07 15:17:26 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:59:35 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct	s_list
 	int		a_p;
 	int		j_p;
 	int		ec;
+	int		ec_copy;
 	int		**path;
 	int		**matrix;
 	void	*mlx;

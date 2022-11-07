@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:45:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/04 19:18:33 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:59:22 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int path_valid(t_list  *list)
 	int y;
 
 	list->ec = list->e + list->c;
+	list->ec_copy = list->ec;
 	list->matrix = malloc (list->i * sizeof(int *));
 	// if (matrix == NULL)
 		// return (NULL);
