@@ -6,13 +6,13 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:57:43 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/07 14:37:26 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:53:40 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	put_tree(t_vars *vars, t_list *list)
+void	put_tree(t_list *list)
 {
 	int c;
 	int b;
@@ -32,15 +32,15 @@ void	put_tree(t_vars *vars, t_list *list)
 		while (c < d)
 		{
 			if (list->tab[b][c] == 'C')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img4, x, y);
+				mlx_put_image_to_window(list->mlx, list->win, list->img4, x, y);
 			if (list->tab[b][c] == '1')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img3, x, y);
+				mlx_put_image_to_window(list->mlx, list->win, list->img3, x, y);
 			if (list->tab[b][c] == '0')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img2, x, y);
+				mlx_put_image_to_window(list->mlx, list->win, list->img2, x, y);
 			if (list->tab[b][c] == 'P')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img, x, y);
+				mlx_put_image_to_window(list->mlx, list->win, list->img, x, y);
 			if (list->tab[b][c] == 'E')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img5, x, y);
+				mlx_put_image_to_window(list->mlx, list->win, list->img5, x, y);
 			x = x + 64;
 			c++;
 		}

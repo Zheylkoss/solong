@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Mon Nov  7 12:24:26 2022
+# Make data base, printed on Mon Nov  7 15:17:42 2022
 
 # Variables
 
@@ -17,7 +18,7 @@ GDK_BACKEND = x11
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 16)
-SRC = ft_main.c ft_put_tree.c ft_parsing.c path.c
+SRC = ft_main.c ft_put_tree.c ft_parsing.c path.c mouv.c
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
@@ -96,8 +97,8 @@ XDG_CONFIG_DIRS = /etc/xdg/xdg-unity:/etc/xdg
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 XDG_SESSION_DESKTOP = unity
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST := Makefile
+# makefile (from 'obj/path.d', line 1)
+MAKEFILE_LIST := Makefile obj/ft_main.d obj/ft_put_tree.d obj/ft_parsing.d obj/path.d
 # automatic
 @F = $(notdir $@)
 # environment
@@ -247,7 +248,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = unity
 # variable set hash-table stats:
-# Load=118/1024=12%, Rehash=0, Collisions=10/169=6%
+# Load=118/1024=12%, Rehash=0, Collisions=10/177=6%
 
 # Pattern-specific Variable Values
 
@@ -255,10 +256,10 @@ GDMSESSION = unity
 
 # Directories
 
-# . (device 58, inode 208077009): 15 files, no impossibilities.
-# srcs (device 58, inode 208085031): 6 files, no impossibilities so far.
+# . (device 58, inode 208077009): 17 files, no impossibilities.
+# srcs (device 58, inode 208085031): 3 files, no impossibilities so far.
 
-# 21 files, no impossibilities in 2 directories.
+# 20 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -270,12 +271,18 @@ obj/%.o: srcs/%.c
 # 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
-obj/ft_put_tree.o: srcs/ft_put_tree.c
+srcs/../includes/so_long.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-11-07 15:17:26.428397466
+#  File has been updated.
+#  Successfully updated.
+
+obj/ft_put_tree.o: srcs/ft_put_tree.c srcs/ft_put_tree.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_put_tree'
-#  File is an intermediate prerequisite.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-11-07 15:17:27.530404099
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
@@ -283,24 +290,24 @@ obj/ft_put_tree.o: srcs/ft_put_tree.c
 # Not a target:
 srcs/ft_put_tree.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 11:18:05.2333836
+ 
+#  Last modified 2022-11-07 14:53:40.096813965
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 obj/path.d:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-11-07 15:17:27.654404845
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 
-obj/path.o: srcs/path.c
+obj/path.o: srcs/path.c srcs/path.c srcs/./../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'path'
-#  File is an intermediate prerequisite.
-#  File does not exist.
- 
-#  File has not been updated.
+#  Last modified 2022-11-07 15:17:27.652404833
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
@@ -315,11 +322,11 @@ srcs/ft_parsing.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 11:48:57.010564033
+#  Last modified 2022-11-07 15:17:41.099485774
 #  File has been updated.
 #  Successfully updated.
 
-so_long: obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o
+so_long: obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o obj/mouv.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -332,6 +339,12 @@ so_long: obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o
 	make -C ./libs/printf/
 	make -C ./libs/minilibx-linux/
 	clang ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
+
+includes/./../libs/printf/libftprintf.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-11-04 11:18:05.221383529
+#  File has been updated.
+#  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -348,9 +361,15 @@ clean:
 # Not a target:
 obj/ft_parsing.d:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-11-07 15:17:27.593404478
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+
+includes/./../libs/minilibx-linux/mlx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-11-04 11:18:05.10438283
+#  File has been updated.
+#  Successfully updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -359,9 +378,16 @@ re: fclean all
 #  File has not been updated.
 
 # Not a target:
+obj/mouv.d:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
 srcs/ft_main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 12:11:21.197748793
+#  Last modified 2022-11-07 15:12:40.260674969
 #  File has been updated.
 #  Successfully updated.
 
@@ -370,6 +396,12 @@ srcs/ft_main.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+includes/./../libs/gnl/get_next_line.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-11-04 11:18:04.96038197
+#  File has been updated.
+#  Successfully updated.
 
 all: so_long
 #  Phony target (prerequisite of .PHONY).
@@ -395,40 +427,27 @@ fclean: clean
 # Not a target:
 obj/ft_main.d:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-11-07 15:17:27.475403768
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 
-obj/ft_main.o: srcs/ft_main.c
+obj/ft_main.o: srcs/ft_main.c srcs/ft_main.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_main'
-#  File is an intermediate prerequisite.
-#  File does not exist.
+#  Last modified 2022-11-07 15:17:27.473403756
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/ft_main.o
-# automatic
-# * := ft_main
-# automatic
-# < := srcs/ft_main.c
-# automatic
-# + := srcs/ft_main.c
-# automatic
-# % := 
-# automatic
-# ^ := srcs/ft_main.c
-# automatic
-# ? := srcs/ft_main.c
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
 
-.SECONDARY: obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o
+srcs/./../includes/so_long.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-11-07 15:17:26.428397466
+#  File has been updated.
+#  Successfully updated.
+
+.SECONDARY: obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o obj/mouv.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -440,12 +459,41 @@ srcs/path.c:
 #  File has been updated.
 #  Successfully updated.
 
-obj/ft_parsing.o: srcs/ft_parsing.c
+obj/mouv.o: srcs/mouv.c
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'ft_parsing'
+#  Implicit/static pattern stem: 'mouv'
 #  File is an intermediate prerequisite.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/mouv.o
+# automatic
+# * := mouv
+# automatic
+# < := srcs/mouv.c
+# automatic
+# + := srcs/mouv.c
+# automatic
+# % := 
+# automatic
+# ^ := srcs/mouv.c
+# automatic
+# ? := srcs/mouv.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
+#  recipe to execute (from 'Makefile', line 39):
+	@mkdir -p ${OBJ_PATH}
+	clang ${FLAGS} ${INC} -o $@ -c $<
+
+obj/ft_parsing.o: srcs/ft_parsing.c srcs/ft_parsing.c srcs/./../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'ft_parsing'
+#  Last modified 2022-11-07 15:17:27.591404466
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
@@ -458,24 +506,31 @@ obj/ft_parsing.o: srcs/ft_parsing.c
 # Not a target:
 obj/ft_put_tree.d:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-11-07 15:17:27.532404111
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/mouv.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-11-07 15:17:04.835267493
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=22/1024=2%, Rehash=0, Collisions=2/65=3%
+# Load=30/1024=3%, Rehash=0, Collisions=2/115=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 48 / storage = 489 B / avg = 10 B
-# current buf: size = 8162 B / used = 489 B / count = 48 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 56 / storage = 684 B / avg = 12 B
+# current buf: size = 8162 B / used = 684 B / count = 56 / avg = 12 B
 
-# strcache performance: lookups = 83 / hit rate = 42%
+# strcache performance: lookups = 149 / hit rate = 62%
 # hash-table stats:
-# Load=48/8192=1%, Rehash=0, Collisions=0/83=0%
-# Finished Make data base on Mon Nov  7 12:24:26 2022
+# Load=56/8192=1%, Rehash=0, Collisions=0/149=0%
+# Finished Make data base on Mon Nov  7 15:17:42 2022
 
  

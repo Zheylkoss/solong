@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/07 14:28:59 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:17:26 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,19 @@
 #include "./../libs/printf/libftprintf.h"
 #include "./../libs/gnl/get_next_line.h"
 
-typedef struct	s_vars
+typedef struct	s_list
 {
+	int		i;
+	int		e;
+	int		c;
+	int		p;
+	int		fd;
+	char **tab;
+	int		a_p;
+	int		j_p;
+	int		ec;
+	int		**path;
+	int		**matrix;
 	void	*mlx;
 	void	*win;
 	void	*img;
@@ -40,25 +51,15 @@ typedef struct	s_vars
 	int		w_x;
 	int		x_pers;
 	int		y_pers;
-}				t_vars;
-typedef struct	s_list
-{
-	int		i;
-	int		e;
-	int		c;
-	int		p;
-	int		fd;
-	char **tab;
-	int		a_p;
-	int		j_p;
-	int		ec;
-	int		**path;
-	int		**matrix;
 }				t_list;
-void	put_tree(t_vars *vars, t_list *list);
+void	put_tree(t_list *list);
 void	put_floor(int w_x, int w_y, void *mlx, void *win, void *img2);
 int	ft_check(int argc, char **argv);
 int	ft_check_map(char **argv, t_list *list);
 int path_valid(t_list *list);
+int	check_mouv_d(t_list *list);
+int	check_mouv_a(t_list *list);
+int	check_mouv_s(t_list *list);
+int	check_mouv_w(t_list *list);
 
 #endif
