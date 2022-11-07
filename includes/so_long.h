@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/07 12:53:21 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:28:59 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,13 @@ typedef struct	s_vars
 	void	*img;
 	void	*img2;
 	void	*img3;
+	void	*img4;
+	void	*img5;
 	char	*relative_path;
 	char	*relative_path2;
 	char	*relative_path3;
+	char	*relative_path4;
+	char	*relative_path5;
 	int		img_width;
 	int		img_height;
 	int		w_y;

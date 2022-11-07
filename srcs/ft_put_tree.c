@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:57:43 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/07 13:23:20 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:37:26 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,17 @@
 
 void	put_tree(t_vars *vars, t_list *list)
 {
-	int	compteur_i;
-	int compteur_y;
 	int c;
 	int b;
 	int d;
 	int x;
 	int	y;
 
-	compteur_i = 0;
-	compteur_y = 0;
 	b = 0;
 	c = 0;
 	d = 0;
 	x = 0;
 	y = 0;
-	compteur_i = vars->w_x / 70;
-	compteur_y = vars->w_y / 70;
 	//il manque l'image pour C et E
 	while (b < list->i)
 	{
@@ -38,7 +32,7 @@ void	put_tree(t_vars *vars, t_list *list)
 		while (c < d)
 		{
 			if (list->tab[b][c] == 'C')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img2, x, y);
+				mlx_put_image_to_window(vars->mlx, vars->win, vars->img4, x, y);
 			if (list->tab[b][c] == '1')
 				mlx_put_image_to_window(vars->mlx, vars->win, vars->img3, x, y);
 			if (list->tab[b][c] == '0')
@@ -46,13 +40,13 @@ void	put_tree(t_vars *vars, t_list *list)
 			if (list->tab[b][c] == 'P')
 				mlx_put_image_to_window(vars->mlx, vars->win, vars->img, x, y);
 			if (list->tab[b][c] == 'E')
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->img2, x, y);
-			x = x + 70;
+				mlx_put_image_to_window(vars->mlx, vars->win, vars->img5, x, y);
+			x = x + 64;
 			c++;
 		}
 		c = 0;
 		x = 0;
-		y = y + 70;
+		y = y + 64;
 		b++;
 	}
 	/*
