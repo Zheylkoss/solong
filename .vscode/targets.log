@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Nov  4 18:44:23 2022
+# Make data base, printed on Mon Nov  7 12:24:26 2022
 
 # Variables
 
@@ -31,7 +31,7 @@ VSCODE_CWD = /mnt/nfs/homes/zhamdouc/dev/solong
 # makefile (from 'Makefile', line 27)
 LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 # environment
-TERMINATOR_UUID = urn:uuid:620b1a25-7451-478b-81a9-63ef8d351b3b
+TERMINATOR_UUID = urn:uuid:fa2e0255-b7e5-4fdd-9810-cca934cf7cb7
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
 # default
@@ -63,7 +63,7 @@ OLDPWD = /mnt/nfs/homes/zhamdouc
 # environment
 VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/zhamdouc/.config/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session11
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
 LANG = C
 # environment
@@ -96,16 +96,16 @@ XDG_CONFIG_DIRS = /etc/xdg/xdg-unity:/etc/xdg
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 XDG_SESSION_DESKTOP = unity
-# makefile (from 'obj/path.d', line 1)
-MAKEFILE_LIST := Makefile obj/ft_main.d obj/ft_put_tree.d obj/ft_parsing.d obj/path.d
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
 ZSH = /mnt/nfs/homes/zhamdouc/.oh-my-zsh
 # environment
-VSCODE_PID = 1093078
+VSCODE_PID = 350243
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_102054_hESF95
+KRB5CCNAME = FILE:/tmp/krb5cc_102054_UA9rfr
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -113,7 +113,7 @@ XDG_SESSION_TYPE = x11
 # makefile (from 'Makefile', line 29)
 FLAGS = -Wall -Wextra -Werror -MMD -MP -g3
 # environment
-SESSION_MANAGER = local/e3r5p7.clusters.42paris.fr:@/tmp/.ICE-unix/1092345,unix/e3r5p7.clusters.42paris.fr:/tmp/.ICE-unix/1092345
+SESSION_MANAGER = local/e3r8p20.clusters.42paris.fr:@/tmp/.ICE-unix/345458,unix/e3r8p20.clusters.42paris.fr:/tmp/.ICE-unix/345458
 # automatic
 *F = $(notdir $*)
 # environment
@@ -153,7 +153,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = bb16485a00c14106bd03ebfe527754ed
+INVOCATION_ID = 6bb83ecb82634d0d93e8391ef481ea22
 # environment
 DOCKER_HOST = unix:///run/user/102054/docker.sock
 # automatic
@@ -183,7 +183,7 @@ LOGNAME = zhamdouc
 # makefile
 .DEFAULT_GOAL := so_long
 # environment
-SYSTEMD_EXEC_PID = 1092522
+SYSTEMD_EXEC_PID = 345578
 # environment
 DISPLAY = :0
 # environment
@@ -195,9 +195,9 @@ DEFAULTS_PATH = /usr/share/gconf/unity.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1091884
+MANAGERPID = 344950
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1092844
+GIO_LAUNCHED_DESKTOP_FILE_PID = 349377
 # environment
 PAGER = less
 # environment
@@ -209,7 +209,7 @@ GPG_AGENT_INFO = /run/user/102054/gnupg/S.gpg-agent:0:1
 # environment
 COLORTERM = truecolor
 # environment
-JOURNAL_STREAM = 8:5424010
+JOURNAL_STREAM = 8:2090083
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -247,7 +247,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = unity
 # variable set hash-table stats:
-# Load=118/1024=12%, Rehash=0, Collisions=10/171=6%
+# Load=118/1024=12%, Rehash=0, Collisions=10/169=6%
 
 # Pattern-specific Variable Values
 
@@ -255,10 +255,10 @@ GDMSESSION = unity
 
 # Directories
 
-# . (device 58, inode 208077009): 17 files, no impossibilities.
-# srcs (device 58, inode 208085031): No files, no impossibilities so far.
+# . (device 58, inode 208077009): 15 files, no impossibilities.
+# srcs (device 58, inode 208085031): 6 files, no impossibilities so far.
 
-# 17 files, no impossibilities in 2 directories.
+# 21 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -270,19 +270,12 @@ obj/%.o: srcs/%.c
 # 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
-srcs/../includes/so_long.h:
+obj/ft_put_tree.o: srcs/ft_put_tree.c
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 14:40:59.242923422
-#  File has been updated.
-#  Successfully updated.
-
-obj/ft_put_tree.o: srcs/ft_put_tree.c srcs/ft_put_tree.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
-#  Implicit rule search has been done.
- 
 #  Implicit/static pattern stem: 'ft_put_tree'
-#  Last modified 2022-11-04 14:45:22.281547969
-#  File has been updated.
-#  Successfully updated.
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
@@ -297,16 +290,17 @@ srcs/ft_put_tree.c:
 # Not a target:
 obj/path.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 18:22:58.629858221
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
-obj/path.o: srcs/path.c srcs/path.c srcs/./../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
+obj/path.o: srcs/path.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'path'
-#  Last modified 2022-11-04 18:22:58.625858197
-#  File has been updated.
-#  Successfully updated.
+#  File is an intermediate prerequisite.
+#  File does not exist.
+ 
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
@@ -314,7 +308,7 @@ obj/path.o: srcs/path.c srcs/path.c srcs/./../includes/so_long.h includes/./../l
 # Not a target:
 srcs/ft_parsing.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 17:23:02.879923685
+#  Last modified 2022-11-04 19:18:56.437456916
 #  File has been updated.
 #  Successfully updated.
 
@@ -327,21 +321,17 @@ Makefile:
 
 so_long: obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-11-04 18:22:58.752858974
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 #  recipe to execute (from 'Makefile', line 32):
 	make -C ./libs/libft/
 	make -C ./libs/gnl/
 	make -C ./libs/printf/
 	make -C ./libs/minilibx-linux/
 	clang ${FLAGS} $(OBJS) $(LIBS) -o ${NAME}
-
-includes/./../libs/printf/libftprintf.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-11-04 11:18:05.221383529
-#  File has been updated.
-#  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -358,15 +348,9 @@ clean:
 # Not a target:
 obj/ft_parsing.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 17:27:27.287529063
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-
-includes/./../libs/minilibx-linux/mlx.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-11-04 11:18:05.10438283
-#  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -387,19 +371,15 @@ srcs/ft_main.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-includes/./../libs/gnl/get_next_line.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-11-04 11:18:04.96038197
-#  File has been updated.
-#  Successfully updated.
-
 all: so_long
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -415,25 +395,38 @@ fclean: clean
 # Not a target:
 obj/ft_main.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 14:45:22.225547623
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
-obj/ft_main.o: srcs/ft_main.c srcs/ft_main.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
+obj/ft_main.o: srcs/ft_main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_main'
-#  Last modified 2022-11-04 14:45:22.223547611
+#  File is an intermediate prerequisite.
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/ft_main.o
+# automatic
+# * := ft_main
+# automatic
+# < := srcs/ft_main.c
+# automatic
+# + := srcs/ft_main.c
+# automatic
+# % := 
+# automatic
+# ^ := srcs/ft_main.c
+# automatic
+# ? := srcs/ft_main.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
 #  recipe to execute (from 'Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
-
-srcs/./../includes/so_long.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-11-04 14:40:59.242923422
-#  File has been updated.
-#  Successfully updated.
 
 .SECONDARY: obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o
 #  Implicit rule search has not been done.
@@ -443,16 +436,16 @@ srcs/./../includes/so_long.h:
 # Not a target:
 srcs/path.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 18:22:56.247843635
+#  Last modified 2022-11-04 19:18:33.694318457
 #  File has been updated.
 #  Successfully updated.
 
-obj/ft_parsing.o: srcs/ft_parsing.c srcs/ft_parsing.c srcs/./../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
+obj/ft_parsing.o: srcs/ft_parsing.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_parsing'
-#  Last modified 2022-11-04 17:27:27.285529051
-#  File has been updated.
-#  Successfully updated.
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 39):
 	@mkdir -p ${OBJ_PATH}
 	clang ${FLAGS} ${INC} -o $@ -c $<
@@ -465,24 +458,24 @@ obj/ft_parsing.o: srcs/ft_parsing.c srcs/ft_parsing.c srcs/./../includes/so_long
 # Not a target:
 obj/ft_put_tree.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 14:45:22.282547975
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=27/1024=3%, Rehash=0, Collisions=2/106=2%
+# Load=22/1024=2%, Rehash=0, Collisions=2/65=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 50 / storage = 624 B / avg = 12 B
-# current buf: size = 8162 B / used = 624 B / count = 50 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 48 / storage = 489 B / avg = 10 B
+# current buf: size = 8162 B / used = 489 B / count = 48 / avg = 10 B
 
-# strcache performance: lookups = 139 / hit rate = 64%
+# strcache performance: lookups = 83 / hit rate = 42%
 # hash-table stats:
-# Load=50/8192=1%, Rehash=0, Collisions=0/139=0%
-# Finished Make data base on Fri Nov  4 18:44:23 2022
+# Load=48/8192=1%, Rehash=0, Collisions=0/83=0%
+# Finished Make data base on Mon Nov  7 12:24:26 2022
 
  

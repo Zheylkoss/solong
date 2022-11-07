@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/04 12:11:21 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:24:17 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,35 +17,36 @@
 // 	void	*win;
 // }				t_vars;
 
-int	close1(int keycode, t_vars *vars)
+//peut etre devoir tout mettre dans liste car peut etre qu'on reussira pas a envoyer 2 struct
+int	close1(int keycode, t_vars *vars, t_list *list)
 {
 	if (keycode == 65307)
 		mlx_loop_end(vars->mlx);
 	if (keycode == 100)
 	{
 		put_floor(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img2);
-		put_tree(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img3);
+		put_tree(vars, list);
 		vars->x_pers = vars->x_pers + 80;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img, vars->x_pers, vars->y_pers);
 	}
 	if (keycode == 97)
 	{
 		put_floor(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img2);
-		put_tree(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img3);
+		put_tree(vars, list);
 		vars->x_pers = vars->x_pers - 80;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img, vars->x_pers, vars->y_pers);
 	}
 	if (keycode == 115)
 	{
 		put_floor(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img2);
-		put_tree(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img3);
+		put_tree(vars, list);
 		vars->y_pers = vars->y_pers + 100;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img, vars->x_pers, vars->y_pers);
 	}
 	if (keycode == 119)
 	{
 		put_floor(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img2);
-		put_tree(vars->w_x, vars->w_y, vars->mlx, vars->win, vars->img3);
+		put_tree(vars, list);
 		vars->y_pers = vars->y_pers - 100;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img, vars->x_pers, vars->y_pers);
 	}
@@ -62,7 +63,7 @@ int	ft_close_mouse (t_vars *vars)
 	return (0);
 }
 
-int	picture(void)
+int	picture(t_list *list)
 {
 	t_vars	vars;
 
@@ -81,8 +82,8 @@ int	picture(void)
 	mlx_hook(vars.win, 2, 1L<<0, close1, &vars);
 	mlx_hook(vars.win, 17, 1L<<17, ft_close_mouse, &vars);
 	// mlx_put_image_to_window(vars.mlx, vars.win, vars.img2, 400, 100);
-	put_floor(vars.w_x, vars.w_y, vars.mlx, vars.win, vars.img2);
-	put_tree(vars.w_x, vars.w_y, vars.mlx, vars.win, vars.img3);
+	//put_floor(vars.w_x, vars.w_y, vars.mlx, vars.win, vars.img2);
+	put_tree(&vars, list);
 	mlx_put_image_to_window(vars.mlx, vars.win, vars.img, 80, 100);// mettre l'image sur le p, envoyer les coordonnes dans cette fonction et ensuite les envoyer au fonction de mouvement
 	mlx_loop(vars.mlx);
 	mlx_destroy_window(vars.mlx, vars.win);
@@ -94,19 +95,33 @@ int	picture(void)
 int	main(int argc, char **argv)
 {
 	t_list	list;
+	int	b;
+	int	c;
+	int d;
 	
 	list.i = 0;
+	b = 0;
+	c = 0;
 	if (ft_check(argc, argv) == 0)
 	{
 		if (ft_check_map(argv, &list) == 0)
 		{
 			if (path_valid(&list) == 0)
-				picture();
+				picture(&list);
 		}
 	}
-	ft_printf("%d", list.i);
-	ft_printf("%d", list.p);
-	ft_printf("%d", list.c);
+	//ft_printf("%d", list.i);
+	while (b < list.i)
+	{
+		d = ft_strlen(list.tab[b]);
+		while (c < d)
+		{
+			ft_printf("%c", list.tab[b][c]);
+			c++;
+		}
+		c = 0;
+		b++;
+	}
 	return (0);
 }
 
