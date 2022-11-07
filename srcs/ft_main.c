@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/07 16:26:14 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:17:39 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,9 @@ int	picture(t_list *list)
 	int	len;
 
 	found_p(list);
-	list->w_x = 64 * list->i;
-	len = ft_strlen(list->tab[0]);
-	list->w_y = 100* len;
+	len = ft_strlen(list->tab[0]) - 1;
+	list->w_x = 64 * len;
+	list->w_y = 64 * list->i;
 	list->mlx = mlx_init();
 	list->relative_path = "./image/dwarf.xpm";
 	list->relative_path2 = "./image/wall.xpm";

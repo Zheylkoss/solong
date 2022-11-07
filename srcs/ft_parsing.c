@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/04 19:18:56 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:21:30 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ int	check_items(char **tab, int i, t_list *list)
 		ft_printf("erreur item");
 		return (1);
 	}
+	ft_printf("c : %d\ne : %e\n", list->c, list->e);
 	return (0);
 }
 
