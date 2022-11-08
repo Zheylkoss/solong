@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/08 15:37:49 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:28:38 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,9 @@ int	main(int argc, char **argv)
 	list.tab = NULL;
 	list.i = 0;
 	list.fd = 0;
+	list.e = 0;
+	list.c = 0;
+	list.p = 0;
 	b = 0;
 	c = 0;
 	if (ft_check(argc, argv) == 0)
@@ -166,3 +169,38 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
+void	free_all(t_list list)
+{
+	int i;
+	
+	if (list.tab != NULL)
+	{
+		i = 0;
+		while (list.tab[i])
+		{
+			free(list.tab[i]);
+			i++;
+		}
+		free(list.tab);
+	}
+	if (list.matrix != NULL)
+	{
+		i = 0;
+		while (list.matrix[i])
+		{
+			free(list.matrix[i]);
+			i++;
+		}
+		free(list.matrix);
+	}
+	if (list.path != NULL)
+	{
+		i = 0;
+		while (list.path[i])
+		{
+			free(list.path[i]);
+			i++;
+		}
+		free(list.path);
+	}
+}

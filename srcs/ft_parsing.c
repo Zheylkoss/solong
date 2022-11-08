@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/08 16:12:24 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:31:49 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	fill_tab(char **argv, char **tab, int i, int fd);
 int	check_lign(char **tab, int i);
-int	check_len(char **tab, int i);
+int	check_len(char **tab, int i, t_list *list);
 int	check_items(char **tab, int i, t_list *list);
 int nb_lign(char **argv, t_list *list);
 
@@ -46,19 +46,19 @@ int	ft_check(int argc, char **argv)
 //renvoyer une valeur differente (n) pour chaque erreur
 int	ft_check_map(char **argv, t_list *list)
 {
-	// char *taille;
 	int n;
 
 	if (nb_lign(argv, list) ==  1)
 		return (1);
 	list->tab = malloc(list->i * sizeof(char *));
-		// if (tab == NULL)
-		// 	return (freeatab(tab), 1);//reprendre la fonction de push_swap pour free
+	if (list->tab == NULL)
+		return (1);
+		//return (freeatab(tab), 1);//reprendre la fonction de push_swap pour free
 	if (fill_tab(argv, list->tab, list->i, list->fd) == 0)
 	{
-		n = check_len(list->tab, list->i);
+		n = check_len(list->tab, list->i, list);
 		n = check_lign(list->tab, list->i);
-		n = check_items(list->tab, list->i, list);//return le nombre de E et C Pour le right road
+		n = check_items(list->tab, list->i, list);
 		if (n != 0)
 			return (1);
 	}
@@ -90,9 +90,6 @@ int	check_items(char **tab, int i, t_list *list)
 	int pos;
 
 	j = 0;
-	list->e = 0;
-	list->c = 0;
-	list->p = 0;
 	while (j < i)
 	{
 		pos = 0;
@@ -120,19 +117,17 @@ int	check_items(char **tab, int i, t_list *list)
 
 //comparaison des len pour etre sur que toutes les lignes sont de la meme taille
 //et que le nombre de colonne est different du nombre de ligne
-int	check_len(char **tab, int i)
+int	check_len(char **tab, int i, t_list *list)
 {
-	int	len;
 	int	j;
-	int len_comp;
 
 	j = 1;
-	len_comp = 0;
-	len = ft_strlen(tab[0]);
+	list->len_comp = 0;
+	list->len = ft_strlen(tab[0]);
 	while (j < i)
 	{
-		len_comp = ft_strlen(tab[j]);
-		if (len != len_comp)
+		list->len_comp = ft_strlen(tab[j]);
+		if (list->len != list->len_comp)
 		{
 			ft_printf("probleme de taille de ligne\n");
 			return (1);
