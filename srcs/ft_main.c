@@ -6,16 +6,12 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/07 19:17:39 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:37:49 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-// typedef struct	s_vars {
-// 	void	*mlx;
-// 	void	*win;
-// }				t_vars;
 /*
 typedef struct	s_vars
 {
@@ -71,10 +67,6 @@ int	close1(int keycode, t_list *list)
 	return (0);
 }
 
-// int	key_d(int keycode, t_vars *vars)
-// {
-// 	return (0);
-// }
 int	ft_close_mouse (t_list *list)
 {
 	mlx_loop_end(list->mlx);
@@ -144,9 +136,11 @@ int	main(int argc, char **argv)
 	t_list	list;
 	int	b;
 	int	c;
-	int d;
+	// int d;
 	
+	list.tab = NULL;
 	list.i = 0;
+	list.fd = 0;
 	b = 0;
 	c = 0;
 	if (ft_check(argc, argv) == 0)
@@ -157,18 +151,18 @@ int	main(int argc, char **argv)
 				picture(&list);
 		}
 	}
-	ft_printf("%d\n", list.ec_copy);
-	while (b < list.i)
-	{
-		d = ft_strlen(list.tab[b]);
-		while (c < d)
-		{
-			ft_printf("%c", list.tab[b][c]);
-			c++;
-		}
-		c = 0;
-		b++;
-	}
+	// ft_printf("%d\n", list.ec_copy);
+	// while (b < list.i)
+	// {
+	// 	d = ft_strlen(list.tab[b]);
+	// 	while (c < d)
+	// 	{
+	// 		ft_printf("%c", list.tab[b][c]);
+	// 		c++;
+	// 	}
+	// 	c = 0;
+	// 	b++;
+	// }
 	return (0);
 }
 

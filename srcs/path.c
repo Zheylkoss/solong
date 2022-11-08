@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:45:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/07 18:51:19 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:32:51 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,26 @@
 int	findpath_c(int i, int j, t_list *list);
 int	findpath_e(int i, int j, t_list *list);
 int path_fill(t_list *list, int **matrix, int **path);
-int	check_path(t_list *list);
+// int	check_path(t_list *list);
+void	empty_the_path(int z, t_list *list);
 
-
+void	empty_the_path(int z, t_list *list)
+{
+	int len;
+	int y;
+	
+	while (z < list->i)
+	{
+		y = 0;
+		len = ft_strlen(list->tab[z]);
+		while (y < len)
+		{
+			list->path[z][y] = 0;
+			y++;
+		}
+		z++;
+	}
+}
 int	found_e(t_list *list)
 {
 	int a;
@@ -44,15 +61,14 @@ int	found_e(t_list *list)
 	}
 	return (0);
 }
+//faire une fonction qui vide path
 int path_valid(t_list  *list)
 {
 	int i;
 	int	j;
 	int	z;
-	int y;
 
-	list->ec = list->e + list->c;
-	list->ec_copy = list->ec;
+	list->ec_copy = list->c + list->e;
 	list->matrix = malloc (list->i * sizeof(int *));
 	// if (matrix == NULL)
 		// return (NULL);
@@ -60,9 +76,6 @@ int path_valid(t_list  *list)
 		// if (matrix == NULL)
 		// return (NULL);
 	path_fill(list, list->matrix, list->path);
-	// faire une boucle sur ec et appele a chaque fois la fonction, clear la path (renvoyer la position de P), faire un break si je retoure 0 
-	// while (list->ec != 0)
-	// {
 	while (list->e != 0)
 	{
 		z = 0;
@@ -70,29 +83,11 @@ int path_valid(t_list  *list)
 		j = list->a_p;
 		if (findpath_e(i, j, list) == 0)
 			break;
-		while (z < 4)
-		{
-			y = 0;
-			while (y < 5)
-			{
-				list->path[z][y] = 0;
-				y++;
-			}
-			z++;
-		}
+		empty_the_path(z, list);
 	}
 	found_e(list);
 	z = 0;
-	while (z < 4)
-	{
-		y = 0;
-		while (y < 5)
-		{
-			list->path[z][y] = 0;
-			y++;
-		}
-		z++;
-	}
+	empty_the_path(z, list);
 	ft_printf("avant : c -> %d\n", list->c);
 	while (list->c != 0)
 	{
@@ -101,22 +96,16 @@ int path_valid(t_list  *list)
 		j = list->a_p;
 		if (findpath_c(i, j, list) == 0)
 			break;
-		while (z < 4)
-		{
-			y = 0;
-			while (y < 5)
-			{
-				list->path[z][y] = 0;
-				y++;
-			}
-			z++;
-		}
+		empty_the_path(z, list);
 	}
 	ft_printf("apres : c -> %d\n", list->c);
 	if (list->c == 0 && list->e == 0)
 		ft_printf("un chemin vers la vitore existe \n");
 	else
+	{
 		ft_printf("il n'y a pas d'espoir\n");
+		return (1);
+	}
 	return (0);
 }
 //trouver la position de P
@@ -174,30 +163,6 @@ int	findpath_e(int i, int j, t_list *list)
 	return (0);
 }
 
-int	check_path(t_list *list)
-{
-	int z;
-	int y;
-	int a;
-
-	a = 0;
-	z = 0;
-	while (z < 10)
-	{
-		y = 0;
-		while (y < 7)
-		{
-			if (list->matrix[z][y] != 1 && list->path[z][y] == 8)
-				a++;
-			else
-				return (1);
-			y++;
-		}
-		z++;
-	}
-	return (0);
-}
-
 int path_fill(t_list *list, int **matrix, int **path)
 {
 	int	j;
@@ -239,3 +204,27 @@ int path_fill(t_list *list, int **matrix, int **path)
 	//freetab
 	return (0);
 }
+
+// int	check_path(t_list *list)
+// {
+// 	int z;
+// 	int y;
+// 	int a;
+
+// 	a = 0;
+// 	z = 0;
+// 	while (z < 10)
+// 	{
+// 		y = 0;
+// 		while (y < 7)
+// 		{
+// 			if (list->matrix[z][y] != 1 && list->path[z][y] == 8)
+// 				a++;
+// 			else
+// 				return (1);
+// 			y++;
+// 		}
+// 		z++;
+// 	}
+// 	return (0);
+// }

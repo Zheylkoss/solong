@@ -6,49 +6,55 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:57:43 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/07 14:53:40 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:23:35 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+void	put_the_correct_img(int c, int i, int len, t_list *list);
+
 void	put_tree(t_list *list)
 {
 	int c;
-	int b;
-	int d;
-	int x;
-	int	y;
+	int i;
+	int len;
 
-	b = 0;
+	i = 0;
 	c = 0;
-	d = 0;
-	x = 0;
-	y = 0;
+	list->x = 0;
+	list->y = 0;
 	//il manque l'image pour C et E
-	while (b < list->i)
+	while (i < list->i)
 	{
-		d = ft_strlen(list->tab[b]);
-		while (c < d)
-		{
-			if (list->tab[b][c] == 'C')
-				mlx_put_image_to_window(list->mlx, list->win, list->img4, x, y);
-			if (list->tab[b][c] == '1')
-				mlx_put_image_to_window(list->mlx, list->win, list->img3, x, y);
-			if (list->tab[b][c] == '0')
-				mlx_put_image_to_window(list->mlx, list->win, list->img2, x, y);
-			if (list->tab[b][c] == 'P')
-				mlx_put_image_to_window(list->mlx, list->win, list->img, x, y);
-			if (list->tab[b][c] == 'E')
-				mlx_put_image_to_window(list->mlx, list->win, list->img5, x, y);
-			x = x + 64;
-			c++;
-		}
+		len = ft_strlen(list->tab[i]);
+		put_the_correct_img(c, i, len, list);
 		c = 0;
-		x = 0;
-		y = y + 64;
-		b++;
+		list->x = 0;
+		list->y = list->y + 64;
+		i++;
 	}
+}
+
+void	put_the_correct_img(int c, int i, int len, t_list *list)
+{
+	while (c < len)
+	{
+		if (list->tab[i][c] == 'C')
+			mlx_put_image_to_window(list->mlx, list->win, list->img4, list->x, list->y);
+		if (list->tab[i][c] == '1')
+			mlx_put_image_to_window(list->mlx, list->win, list->img3, list->x, list->y);
+		if (list->tab[i][c] == '0')
+			mlx_put_image_to_window(list->mlx, list->win, list->img2, list->x, list->y);
+		if (list->tab[i][c] == 'P')
+			mlx_put_image_to_window(list->mlx, list->win, list->img, list->x, list->y);
+		if (list->tab[i][c] == 'E')
+			mlx_put_image_to_window(list->mlx, list->win, list->img5, list->x, list->y);
+		list->x = list->x + 64;
+		c++;
+	}
+	
+}
 	/*
 	while (0 < compteur_i)
 	{
@@ -73,7 +79,7 @@ void	put_tree(t_list *list)
 		i = i + 70;	
 	}
 	*/
-}
+//}
 //fonction possiblement inutile si j'utilise tab pour actualiser a chaque fois 
 /*
 void	put_floor(int w_x, int w_y, void *mlx, void *win, void *img2)

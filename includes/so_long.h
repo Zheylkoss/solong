@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/07 15:59:35 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:21:51 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct	s_list
 	int		i;
 	int		e;
 	int		c;
+	int		x;
+	int		y;
 	int		p;
 	int		fd;
 	char **tab;
