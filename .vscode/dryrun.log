@@ -10,10 +10,16 @@ mkdir -p obj/
 clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/path.o -c srcs/path.c
 mkdir -p obj/
 clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/mouv.o -c srcs/mouv.c
+mkdir -p obj/
+clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/checks.o -c srcs/checks.c
+mkdir -p obj/
+clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/path_utils.o -c srcs/path_utils.c
+mkdir -p obj/
+clang -Wall -Wextra -Werror -MMD -MP -g3 -I./includes/ -o obj/game.o -c srcs/game.c
 make -C ./libs/libft/
 make -C ./libs/gnl/
 make -C ./libs/printf/
 make -C ./libs/minilibx-linux/
-clang -Wall -Wextra -Werror -MMD -MP -g3 obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o obj/mouv.o -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz -o so_long
+clang -Wall -Wextra -Werror -MMD -MP -g3 obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o obj/mouv.o obj/checks.o obj/path_utils.o obj/game.o -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz -o so_long
 make: Leaving directory '/mnt/nfs/homes/zhamdouc/dev/solong'
  

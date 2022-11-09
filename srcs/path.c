@@ -6,16 +6,13 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:45:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/08 15:32:51 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/09 21:45:50 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../includes/so_long.h"
 
-int	findpath_c(int i, int j, t_list *list);
-int	findpath_e(int i, int j, t_list *list);
-int path_fill(t_list *list, int **matrix, int **path);
-// int	check_path(t_list *list);
+int path_fill(t_list *list);
 void	empty_the_path(int z, t_list *list);
 
 void	empty_the_path(int z, t_list *list)
@@ -29,74 +26,46 @@ void	empty_the_path(int z, t_list *list)
 		len = ft_strlen(list->tab[z]);
 		while (y < len)
 		{
-			list->path[z][y] = 0;
+			list->path[z][y] = '0';
 			y++;
 		}
 		z++;
 	}
 }
-int	found_e(t_list *list)
-{
-	int a;
-	int	b;
-	int d;
 
-	d = 0;
-	a = 0;
-	b = 0;
-	while (a < list->i)
-	{
-		d = ft_strlen(list->tab[a]);
-		while (b < d)
-		{
-			if (list->tab[a][b] == 'E')
-			{
-				list->matrix[a][b] = 1;
-				return (0);
-			}
-			b++;
-		}
-		b = 0;
-		a++;
-	}
-	return (0);
-}
 //faire une fonction qui vide path
 int path_valid(t_list  *list)
 {
 	int i;
 	int	j;
-	int	z;
 
 	list->ec_copy = list->c + list->e;
-	list->matrix = malloc (list->i * sizeof(int *));
-	// if (matrix == NULL)
-		// return (NULL);
-	list->path = malloc (list->i * sizeof(int *));
-		// if (matrix == NULL)
-		// return (NULL);
-	path_fill(list, list->matrix, list->path);
+	list->matrix = malloc (list->i * sizeof(char *));
+	if (list->matrix == NULL)
+		return (1);
+	list->path = malloc (list->i * sizeof(char *));
+	if (list->path == NULL)
+		return (1);
+	if (path_fill(list) != 0)
+		return (1);
 	while (list->e != 0)
 	{
-		z = 0;
 		i = list->j_p;
 		j = list->a_p;
 		if (findpath_e(i, j, list) == 0)
 			break;
-		empty_the_path(z, list);
+		empty_the_path(0, list);
 	}
 	found_e(list);
-	z = 0;
-	empty_the_path(z, list);
+	empty_the_path(0, list);
 	ft_printf("avant : c -> %d\n", list->c);
 	while (list->c != 0)
 	{
-		z = 0;
 		i = list->j_p;
 		j = list->a_p;
 		if (findpath_c(i, j, list) == 0)
 			break;
-		empty_the_path(z, list);
+		empty_the_path(0, list);
 	}
 	ft_printf("apres : c -> %d\n", list->c);
 	if (list->c == 0 && list->e == 0)
@@ -108,62 +77,8 @@ int path_valid(t_list  *list)
 	}
 	return (0);
 }
-//trouver la position de P
-int	findpath_c(int i, int j, t_list *list)
-{
-	if (list->path[i][j] == 0 && list->matrix[i][j] != 1 && list->path[i][j] != 8)
-	{
-		list->path[i][j] = 8;
-		if (list->matrix[i][j] == 2)
-		{
-			list->path[i][j] = 0;
-			list->matrix[i][j] = 0;
-			list->c--;
-			return (1);
-		}
-		if (findpath_c(i - 1, j, list) == 1)
-			return (1);
-		if (findpath_c(i, j - 1, list) == 1)
-			return (1);
-		if (findpath_c(i, j + 1, list) == 1)
-			return (1);
-		if (findpath_c(i + 1, j, list) == 1)
-			return (1);
-		list->path[i][j] = 1;
-	}
-	if (list->c == 0)
-		return (3);
-	return (0);
-}
 
-int	findpath_e(int i, int j, t_list *list)
-{
-	if (list->path[i][j] == 0 && list->matrix[i][j] != 1 && list->path[i][j] != 8)
-	{
-		list->path[i][j] = 8;
-		if (list->matrix[i][j] == 4)
-		{
-			list->path[i][j] = 0;
-			list->matrix[i][j] = 0;
-			list->e--;
-			return (1);
-		}
-		if (findpath_e(i - 1, j, list) == 1)
-			return (1);
-		if (findpath_e(i, j - 1, list) == 1)
-			return (1);
-		if (findpath_e(i, j + 1, list) == 1)
-			return (1);
-		if (findpath_e(i + 1, j, list) == 1)
-			return (1);
-		list->path[i][j] = 1;
-	}
-	if (list->e == 0)
-		return (3);
-	return (0);
-}
-
-int path_fill(t_list *list, int **matrix, int **path)
+int path_fill(t_list *list)
 {
 	int	j;
 	int	index;
@@ -172,59 +87,38 @@ int path_fill(t_list *list, int **matrix, int **path)
 	j = 0;
 	index = 0;
 	a = 0;
+	index  = ft_strlen(list->tab[j]);
 	while (j < list->i)
 	{
-		index  = ft_strlen(list->tab[j]);
-		matrix[j] = malloc ((index - 1) * sizeof(int));
-		//if (matrix == NULL)
-		//	return (freetab(matrix), NULL); prendre la fonction qui est dans push_swap
-		path[j] = malloc ((index - 1) * sizeof(int));
-		//if (path == NULL)
-		//	return (freetab(path), NULL); prendre la fonction qui est dans push_swap ne pas oublier de free matrix
-		while (a < index)
+		list->matrix[j] = malloc (index * sizeof(char));
+		if (list->matrix == NULL)
+			return (1);
+		list->path[j] = malloc (index * sizeof(char));
+		if (list->path == NULL)
+			return (1);
+		while (a < (index - 1))
 		{
 			if (list->tab[j][a] == 'C')
-				matrix[j][a] = 2;
+				list->matrix[j][a] = '2';
 			else if (list->tab[j][a] == 'E')
-				matrix[j][a] = 4;
+				list->matrix[j][a] = '4';
 			else if (list->tab[j][a] == 'P')
 			{
-				matrix[j][a] = 0;
+				list->matrix[j][a] = '0';
 				list->j_p = j;
 				list->a_p = a;
 			}
+			else if (list->tab[j][a] == '1')
+				list->matrix[j][a] = '1';
 			else
-				matrix[j][a] = list->tab[j][a] - '0';
-			path[j][a] = 0;
+				list->matrix[j][a] = '0';
+			list->path[j][a] = '0';
 			a++;
 		}
+		list->matrix[j][a] = '\0';
+		list->matrix[j][a] = '\0';
 		a = 0;
 		j++;
 	}
-	//freetab
 	return (0);
 }
-
-// int	check_path(t_list *list)
-// {
-// 	int z;
-// 	int y;
-// 	int a;
-
-// 	a = 0;
-// 	z = 0;
-// 	while (z < 10)
-// 	{
-// 		y = 0;
-// 		while (y < 7)
-// 		{
-// 			if (list->matrix[z][y] != 1 && list->path[z][y] == 8)
-// 				a++;
-// 			else
-// 				return (1);
-// 			y++;
-// 		}
-// 		z++;
-// 	}
-// 	return (0);
-// }

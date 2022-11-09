@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/08 16:30:25 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/09 21:56:42 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 #include "./../libs/minilibx-linux/mlx.h"
 #include <unistd.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -36,8 +37,8 @@ typedef struct	s_list
 	int		j_p;
 	int		ec;
 	int		ec_copy;
-	int		**path;
-	int		**matrix;
+	char		**path;
+	char		**matrix;
 	void	*mlx;
 	void	*win;
 	void	*img;
@@ -66,5 +67,16 @@ int	check_mouv_d(t_list *list);
 int	check_mouv_a(t_list *list);
 int	check_mouv_s(t_list *list);
 int	check_mouv_w(t_list *list);
+int	check_lign(char **tab, int i);
+int	check_len(char **tab, int i, t_list *list);
+int	check_items(char **tab, int i, t_list *list);
+int	findpath_c(int i, int j, t_list *list);
+int	findpath_e(int i, int j, t_list *list);
+int	found_e(t_list *list);
+int	found_p(t_list *list);
+int	picture(t_list *list);
+int	close1(int keycode, t_list *list);
+int	ft_close_mouse (t_list *list);
+size_t	strlen(const char *str);
 
 #endif

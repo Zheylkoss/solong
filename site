@@ -17,3 +17,67 @@ esc	= 65307
 checker si c'est un rectangle !!
 
 tout free dans tous les cas 
+
+/*
+typedef struct	s_vars
+{
+	void	*mlx;
+	void	*win;
+	void	*img;
+	void	*img2;
+	void	*img3;
+	void	*img4;
+	void	*img5;
+	char	*relative_path;
+	char	*relative_path2;
+	char	*relative_path3;
+	char	*relative_path4;
+	char	*relative_path5;
+	int		img_width;
+	int		img_height;
+	int		w_y;
+	int		w_x;
+	int		x_pers;
+	int		y_pers;
+}				t_vars;
+*/
+//peut etre devoir tout mettre dans liste 
+//car peut etre qu'on reussira pas a envoyer 2 struct
+
+/*
+void	free_all(t_list list)
+{
+	int i;
+	
+	if (list.tab != NULL)
+	{
+		i = 0;
+		while (list.tab[i])
+		{
+			free(list.tab[i]);
+			i++;
+		}
+		free(list.tab);
+	}
+	if (list.matrix != NULL)
+	{
+		i = 0;
+		while (list.matrix[i])
+		{
+			free(list.matrix[i]);
+			i++;
+		}
+		free(list.matrix);
+	}
+	if (list.path != NULL)
+	{
+		i = 0;
+		while (list.path[i])
+		{
+			free(list.path[i]);
+			i++;
+		}
+		free(list.path);
+	}
+}
+*/

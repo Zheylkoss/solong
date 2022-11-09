@@ -6,17 +6,15 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/08 16:31:49 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/09 19:32:03 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../includes/so_long.h"
 
-int	fill_tab(char **argv, char **tab, int i, int fd);
-int	check_lign(char **tab, int i);
-int	check_len(char **tab, int i, t_list *list);
-int	check_items(char **tab, int i, t_list *list);
+int	fill_tab(char **argv, char **tab, int i, t_list *list);
 int nb_lign(char **argv, t_list *list);
+int	first_lign (int i, int j, char **tab);
 
 int	ft_check(int argc, char **argv)
 {
@@ -48,17 +46,17 @@ int	ft_check_map(char **argv, t_list *list)
 {
 	int n;
 
+	n = 0;
 	if (nb_lign(argv, list) ==  1)
 		return (1);
 	list->tab = malloc(list->i * sizeof(char *));
 	if (list->tab == NULL)
 		return (1);
-		//return (freeatab(tab), 1);//reprendre la fonction de push_swap pour free
-	if (fill_tab(argv, list->tab, list->i, list->fd) == 0)
+	if (fill_tab(argv, list->tab, list->i, list) == 0)
 	{
-		n = check_len(list->tab, list->i, list);
-		n = check_lign(list->tab, list->i);
-		n = check_items(list->tab, list->i, list);
+		n = n + check_len(list->tab, list->i, list);
+		n = n + check_lign(list->tab, list->i);
+		n = n + check_items(list->tab, list->i, list);
 		if (n != 0)
 			return (1);
 	}
@@ -72,133 +70,48 @@ int nb_lign(char **argv, t_list *list)
 {
 	char *taille;
 	
+	taille = NULL;
 	list->fd = open(argv[1], O_RDWR);// securite ?
- 	taille = get_next_line (list->fd);
-	while (taille)
+ 	//taille = get_next_line (list->fd);
+	while (1)
 	{
-		list->i++;
 		taille = get_next_line (list->fd);
+		if (taille == NULL)
+			break;
+		list->i++;
+		free(taille);
 	}
 	close(list->fd);//securite ??
 	return (0);
 }
 
-
-int	check_items(char **tab, int i, t_list *list)
-{
-	int	j;
-	int pos;
-
-	j = 0;
-	while (j < i)
-	{
-		pos = 0;
-		while(tab[j][pos])
-		{
-			if (tab[j][pos] == 'E')
-				list->e++;
-			if (tab[j][pos] == 'C')
-				list->c++;
-			if (tab[j][pos] == 'P')
-				list->p++;
-			pos++;
-		}
-		j++;
-	}
-	if (list->p != 1 || list->c < 1 || list->e != 1)
-	{
-		ft_printf("erreur item");
-		return (1);
-	}
-	ft_printf("c : %d\ne : %e\n", list->c, list->e);
-	return (0);
-}
-
-
-//comparaison des len pour etre sur que toutes les lignes sont de la meme taille
-//et que le nombre de colonne est different du nombre de ligne
-int	check_len(char **tab, int i, t_list *list)
-{
-	int	j;
-
-	j = 1;
-	list->len_comp = 0;
-	list->len = ft_strlen(tab[0]);
-	while (j < i)
-	{
-		list->len_comp = ft_strlen(tab[j]);
-		if (list->len != list->len_comp)
-		{
-			ft_printf("probleme de taille de ligne\n");
-			return (1);
-		}
-		j++;
-	}
-	j = 0;
-	while (tab[i - 1][j])
-	{
-		if (tab[i -1][j] != '1' && tab[i - 1][j] != '\n')
-		{
-			ft_printf("erreur derniere ligne\n");
-			return (1);
-		}
-		j++;
-	}
-	return (0);
-}
-
-//je check le contenu des lignes, ca commence est finis par 1, contient des 0 et les lettres autorise
-int	check_lign(char **tab, int i)
-{
-	int j;
-	int	pos;
-	int	len;
-	
-	j = 1;
-	while (j < (i - 1))
-	{
-		pos = 1;
-		len = ft_strlen(tab[j]);
-		if (tab[j][0] != '1' || tab[j][len - 2] != '1')
-		{
-			ft_printf("erreur sur les murs\n");
-			return (1);
-		}
-		while (tab[j][pos + 2])
-		{
-			if (tab[j][pos] != '0' && tab[j][pos] != 'E' && tab[j][pos] != 'C' && tab[j][pos] != 'P' && tab[j][pos] != '1')
-			{
-				ft_printf("la terre du milieu\n");
-				return (1);
-			}
-			pos++;
-		}
-		j++;
-	}
-	return (0);
-}
-
-int	fill_tab(char **argv, char **tab, int i, int fd)
+int	fill_tab(char **argv, char **tab, int i, t_list *list)
 {
 	int j;
 
 	j = 0;
-	fd = open(argv[1], O_RDWR);
+	list->fd = open(argv[1], O_RDWR);//securite
 	i = 0;
-	tab[i] = get_next_line (fd);
-	if (tab[i] == NULL || tab[0][0] != '1')
+	while (i < list->i)
+	{
+		tab[i] = get_next_line (list->fd);
+		i++;
+	}
+	close(list->fd);//securite
+	if (tab[0] == NULL || tab[0][0] != '1')//debut de fichier incorrect
 	{
 		ft_printf("fichier vide\n");
 		return (1);
 	}
-	while (tab[i])
-	{
-		i++;
-		tab[i] = get_next_line (fd);
-	}
-	close(fd);
-	i = 0;
-	j = 0;
+	if (first_lign(0, 0, tab) == 1)
+		return (1);
+	// i = 0;
+	// j = 0;
+	return (0);
+}
+
+int	first_lign (int i, int j, char **tab)
+{
 	while (tab[j][i])
 	{
 		if (tab[0][i] != '1' && tab[0][i] != '\n')//attention au cas ou il y aura juste un "\n"
