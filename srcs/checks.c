@@ -6,18 +6,16 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:27:53 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/09 21:56:25 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:41:24 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../includes/so_long.h"
 
-int	check_items(char **tab, int i, t_list *list)
+int	check_items(int j, char **tab, int i, t_list *list)
 {
-	int	j;
 	int	pos;
 
-	j = 0;
 	while (j < i)
 	{
 		pos = 0;
@@ -42,14 +40,10 @@ int	check_items(char **tab, int i, t_list *list)
 	return (0);
 }
 
-
 //comparaison des len pour etre sur que toutes les lignes sont de la meme taille
 //et que le nombre de colonne est different du nombre de ligne
-int	check_len(char **tab, int i, t_list *list)
+int	check_len(int j, char **tab, int i, t_list *list)
 {
-	int	j;
-
-	j = 1;
 	list->len_comp = 0;
 	list->len = strlen(tab[0]);
 	while (j < i)
@@ -75,14 +69,11 @@ int	check_len(char **tab, int i, t_list *list)
 	return (0);
 }
 
-//je check le contenu des lignes, ca commence est finis par 1, contient des 0 et les lettres autorise
-int	check_lign(char **tab, int i)
+int	check_lign(int j, char **tab, int i)
 {
-	int j;
 	int	pos;
 	int	len;
-	
-	j = 1;
+
 	while (j < (i - 1))
 	{
 		pos = 1;
@@ -94,7 +85,8 @@ int	check_lign(char **tab, int i)
 		}
 		while (tab[j][pos + 2])
 		{
-			if (tab[j][pos] != '0' && tab[j][pos] != 'E' && tab[j][pos] != 'C' && tab[j][pos] != 'P' && tab[j][pos] != '1')
+			if (tab[j][pos] != '0' && tab[j][pos] != 'E' && tab[j][pos] != 'C'
+				&& tab[j][pos] != 'P' && tab[j][pos] != '1')
 			{
 				ft_printf("la terre du milieu\n");
 				return (1);

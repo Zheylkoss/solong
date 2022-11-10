@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/10 19:13:39 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:41:04 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ typedef struct	s_list
 	void	*img3;
 	void	*img4;
 	void	*img5;
-	char	*relative_path;
-	char	*relative_path2;
-	char	*relative_path3;
-	char	*relative_path4;
-	char	*relative_path5;
-	int		img_width;
-	int		img_height;
+	char	*img_path;
+	char	*img_path2;
+	char	*img_path3;
+	char	*img_path4;
+	char	*img_path5;
+	int		img_w;
+	int		img_h;
 	int		w_y;
 	int		w_x;
 	int		x_pers;
@@ -60,16 +60,16 @@ typedef struct	s_list
 }				t_list;
 void	put_tree(t_list *list);
 void	put_floor(int w_x, int w_y, void *mlx, void *win, void *img2);
-int	ft_check(int argc, char **argv);
+int	ft_check(char **argv);
 int	ft_check_map(char **argv, t_list *list);
 int path_valid(t_list *list);
 int	check_mouv_d(t_list *list);
 int	check_mouv_a(t_list *list);
 int	check_mouv_s(t_list *list);
 int	check_mouv_w(t_list *list);
-int	check_lign(char **tab, int i);
-int	check_len(char **tab, int i, t_list *list);
-int	check_items(char **tab, int i, t_list *list);
+int	check_lign(int j, char **tab, int i);
+int	check_len(int j, char **tab, int i, t_list *list);
+int	check_items(int j, char **tab, int i, t_list *list);
 int	findpath_c(int i, int j, t_list *list);
 int	findpath_e(int i, int j, t_list *list);
 int	found_e(t_list *list);

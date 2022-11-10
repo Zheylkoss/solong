@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:24:52 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/10 19:11:22 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:26:41 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	found_e(t_list *list)
 {
-	int a;
+	int	a;
 	int	b;
-	int d;
+	int	d;
 
 	d = 0;
 	a = 0;
@@ -41,9 +41,9 @@ int	found_e(t_list *list)
 
 int	found_p(t_list *list)
 {
-	int a;
+	int	a;
 	int	b;
-	int d;
+	int	d;
 
 	d = 0;
 	a = 0;
@@ -69,10 +69,11 @@ int	found_p(t_list *list)
 
 int	findpath_c(int i, int j, t_list *list)
 {
-	if (list->path[i][j] == '0' && list->matrix[i][j] != '1' && list->path[i][j] != '8')
+	if (list->path[i][j] == '0' && list->matrix[i][j] != '1'
+	&& list->path[i][j] != '8')
 	{
 		list->path[i][j] = '8';
-		if (list->matrix[i][j] == '2')
+		if (list->matrix[i][j] == 'C')
 		{
 			list->path[i][j] = '0';
 			list->matrix[i][j] = '0';
@@ -96,10 +97,11 @@ int	findpath_c(int i, int j, t_list *list)
 
 int	findpath_e(int i, int j, t_list *list)
 {
-	if (list->path[i][j] == '0' && list->matrix[i][j] != '1' && list->path[i][j] != '8')
+	if (list->path[i][j] == '0' && list->matrix[i][j] != '1'
+	&& list->path[i][j] != '8')
 	{
 		list->path[i][j] = '8';
-		if (list->matrix[i][j] == '4')
+		if (list->matrix[i][j] == 'E')
 		{
 			list->path[i][j] = '0';
 			list->matrix[i][j] = '0';
