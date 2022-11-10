@@ -6,7 +6,7 @@
 #    By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 18:57:01 by zakariyaham       #+#    #+#              #
-#    Updated: 2022/11/09 18:35:11 by zhamdouc         ###   ########.fr        #
+#    Updated: 2022/11/10 18:27:17 by zhamdouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ INC = -I./includes/
 
 LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 
-FLAGS = -Wall -Wextra -Werror -MMD -MP -g3
+FLAGS = -Wall -Wextra -Werror -MMD -MP -g
 
 ${NAME} : ${OBJS}
 	make -C ./libs/libft/

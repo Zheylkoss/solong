@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:12:17 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/07 17:50:20 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:57:59 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_mouv_d(t_list *list)
 		list->tab[i][j] = '0';
 		return (0);
 	}
-	if (list->tab[i][j + 1] == 1)
+	if (list->tab[i][j + 1] == '1')
 	{
 		list->tab[i][j + 1] = '1';
 		list->tab[i][j] = 'P';
@@ -65,7 +65,7 @@ int	check_mouv_a(t_list *list)
 		list->tab[i][j] = '0';
 		return (0);
 	}
-	if (list->tab[i][j - 1] == 1)
+	if (list->tab[i][j - 1] == '1')
 	{
 		list->tab[i][j - 1] = '1';
 		list->tab[i][j] = 'P';
@@ -102,7 +102,7 @@ int	check_mouv_w(t_list *list)
 		list->tab[i][j] = '0';
 		return (0);
 	}
-	if (list->tab[i - 1][j] == 1)
+	if (list->tab[i - 1][j] == '1')
 	{
 		list->tab[i - 1][j] = '1';
 		list->tab[i][j] = 'P';
@@ -139,7 +139,7 @@ int	check_mouv_s(t_list *list)
 		list->tab[i][j] = '0';
 		return (0);
 	}
-	if (list->tab[i + 1][j] == 1)
+	if (list->tab[i + 1][j] == '1')
 	{
 		list->tab[i + 1][j] = '1';
 		list->tab[i][j] = 'P';

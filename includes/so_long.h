@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/09 21:56:42 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:13:39 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ int	picture(t_list *list);
 int	close1(int keycode, t_list *list);
 int	ft_close_mouse (t_list *list);
 size_t	strlen(const char *str);
+void init(t_list *list);
+void clean_all(t_list *list);
 
 #endif

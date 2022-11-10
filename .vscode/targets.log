@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Wed Nov  9 20:45:39 2022
+# Make data base, printed on Thu Nov 10 18:27:51 2022
 
 # Variables
 
@@ -31,7 +32,7 @@ VSCODE_CWD = /mnt/nfs/homes/zhamdouc/dev/solong
 # makefile (from 'Makefile', line 27)
 LIBS = -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz
 # environment
-TERMINATOR_UUID = urn:uuid:70439fe2-473f-4be2-8d78-60427561cf0e
+TERMINATOR_UUID = urn:uuid:7b3cbcde-d5b3-46ed-a4d5-346d0c1ed3a1
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
 # default
@@ -63,7 +64,7 @@ OLDPWD = /mnt/nfs/homes/zhamdouc
 # environment
 VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/zhamdouc/.config/Code/CachedData/8fa188b2b301d36553cbc9ce1b0a146ccb93351f
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session8
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session14
 # environment
 LANG = C
 # environment
@@ -103,17 +104,17 @@ MAKEFILE_LIST := Makefile obj/ft_main.d obj/ft_put_tree.d obj/ft_parsing.d obj/p
 # environment
 ZSH = /mnt/nfs/homes/zhamdouc/.oh-my-zsh
 # environment
-VSCODE_PID = 397511
+VSCODE_PID = 1561668
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_102054_QGvA4e
+KRB5CCNAME = FILE:/tmp/krb5cc_102054_k662MW
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # makefile (from 'Makefile', line 29)
-FLAGS = -Wall -Wextra -Werror -MMD -MP -g3
+FLAGS = -Wall -Wextra -Werror -MMD -MP -g
 # environment
-SESSION_MANAGER = local/e2r11p5.clusters.42paris.fr:@/tmp/.ICE-unix/385609,unix/e2r11p5.clusters.42paris.fr:/tmp/.ICE-unix/385609
+SESSION_MANAGER = local/e3r6p19.clusters.42paris.fr:@/tmp/.ICE-unix/1560849,unix/e3r6p19.clusters.42paris.fr:/tmp/.ICE-unix/1560849
 # automatic
 *F = $(notdir $*)
 # environment
@@ -153,7 +154,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = 355ec990710645fbb8c456ce84c885a9
+INVOCATION_ID = 15a7ea7cb0c44685872d7a2d7188cfeb
 # environment
 DOCKER_HOST = unix:///run/user/102054/docker.sock
 # automatic
@@ -183,7 +184,7 @@ LOGNAME = zhamdouc
 # makefile
 .DEFAULT_GOAL := so_long
 # environment
-SYSTEMD_EXEC_PID = 385758
+SYSTEMD_EXEC_PID = 1560987
 # environment
 DISPLAY = :0
 # environment
@@ -195,9 +196,9 @@ DEFAULTS_PATH = /usr/share/gconf/unity.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 385080
+MANAGERPID = 1560336
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 386083
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1561527
 # environment
 PAGER = less
 # environment
@@ -209,7 +210,7 @@ GPG_AGENT_INFO = /run/user/102054/gnupg/S.gpg-agent:0:1
 # environment
 COLORTERM = truecolor
 # environment
-JOURNAL_STREAM = 8:1568454
+JOURNAL_STREAM = 8:8071613
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -272,14 +273,14 @@ obj/%.o: srcs/%.c
 
 srcs/../includes/so_long.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 18:34:17.91745199
+#  Last modified 2022-11-09 21:56:42.365859976
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 obj/checks.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:45:12.209452663
+#  Last modified 2022-11-10 17:53:34.180121283
 #  File has been updated.
 #  Successfully updated.
 
@@ -287,7 +288,7 @@ obj/checks.d:
 obj/path_utils.o: srcs/path_utils.c srcs/path_utils.c srcs/./../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'path_utils'
-#  Last modified 2022-11-09 20:45:12.258452949
+#  Last modified 2022-11-10 17:53:34.237121624
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -297,7 +298,7 @@ obj/path_utils.o: srcs/path_utils.c srcs/path_utils.c srcs/./../includes/so_long
 obj/ft_put_tree.o: srcs/ft_put_tree.c srcs/ft_put_tree.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_put_tree'
-#  Last modified 2022-11-09 20:45:12.009451494
+#  Last modified 2022-11-10 17:53:33.858119357
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -314,14 +315,14 @@ srcs/ft_put_tree.c:
 # Not a target:
 obj/path.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:45:12.110452085
+#  Last modified 2022-11-10 17:53:34.003120224
 #  File has been updated.
 #  Successfully updated.
 
 obj/path.o: srcs/path.c srcs/path.c srcs/./../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'path'
-#  Last modified 2022-11-09 20:45:12.109452079
+#  Last modified 2022-11-10 17:53:34.002120218
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -338,13 +339,13 @@ srcs/ft_parsing.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 18:35:11.311774269
+#  Last modified 2022-11-10 18:27:17.774194068
 #  File has been updated.
 #  Successfully updated.
 
 so_long: obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o obj/mouv.o obj/checks.o obj/path_utils.o obj/game.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-11-09 20:45:15.546472161
+#  Last modified 2022-11-10 18:27:22.89122454
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 32):
@@ -375,7 +376,7 @@ clean:
 # Not a target:
 obj/ft_parsing.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:45:12.060451792
+#  Last modified 2022-11-10 17:53:33.928119776
 #  File has been updated.
 #  Successfully updated.
 
@@ -394,28 +395,28 @@ re: fclean all
 # Not a target:
 obj/mouv.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:45:12.161452383
+#  Last modified 2022-11-10 17:58:47.358994483
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 obj/path_utils.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:45:12.259452955
+#  Last modified 2022-11-10 17:53:34.239121636
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 obj/game.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:45:12.30645323
+#  Last modified 2022-11-10 18:27:22.781223885
 #  File has been updated.
 #  Successfully updated.
 
 obj/game.o: srcs/game.c srcs/game.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'game'
-#  Last modified 2022-11-09 20:45:12.305453224
+#  Last modified 2022-11-10 18:27:22.779223873
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -425,7 +426,7 @@ obj/game.o: srcs/game.c srcs/game.c srcs/../includes/so_long.h includes/./../lib
 # Not a target:
 srcs/ft_main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:14:15.676435975
+#  Last modified 2022-11-10 17:56:12.850070326
 #  File has been updated.
 #  Successfully updated.
 
@@ -437,7 +438,7 @@ srcs/ft_main.c:
 
 includes/./../libs/gnl/get_next_line.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-04 11:18:04.96038197
+#  Last modified 2022-11-09 22:13:50.714002116
 #  File has been updated.
 #  Successfully updated.
 
@@ -463,14 +464,14 @@ fclean: clean
 # Not a target:
 obj/ft_main.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:45:11.964451232
+#  Last modified 2022-11-10 17:58:47.297994118
 #  File has been updated.
 #  Successfully updated.
 
 obj/ft_main.o: srcs/ft_main.c srcs/ft_main.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_main'
-#  Last modified 2022-11-09 20:45:11.96245122
+#  Last modified 2022-11-10 17:58:47.295994107
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -480,20 +481,20 @@ obj/ft_main.o: srcs/ft_main.c srcs/ft_main.c srcs/../includes/so_long.h includes
 # Not a target:
 srcs/path_utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:44:36.957246688
+#  Last modified 2022-11-09 21:41:31.944438582
 #  File has been updated.
 #  Successfully updated.
 
 srcs/./../includes/so_long.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 18:34:17.91745199
+#  Last modified 2022-11-09 21:56:42.365859976
 #  File has been updated.
 #  Successfully updated.
 
 obj/checks.o: srcs/checks.c srcs/checks.c srcs/./../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checks'
-#  Last modified 2022-11-09 20:45:12.208452657
+#  Last modified 2022-11-10 17:53:34.179121277
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -508,21 +509,21 @@ obj/checks.o: srcs/checks.c srcs/checks.c srcs/./../includes/so_long.h includes/
 # Not a target:
 srcs/path.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:44:11.281096672
+#  Last modified 2022-11-09 21:45:50.449976459
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/checks.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 17:30:45.857054759
+#  Last modified 2022-11-09 21:56:25.513759487
 #  File has been updated.
 #  Successfully updated.
 
 obj/mouv.o: srcs/mouv.c srcs/mouv.c srcs/../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'mouv'
-#  Last modified 2022-11-09 20:45:12.159452371
+#  Last modified 2022-11-10 17:58:47.356994471
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -532,7 +533,7 @@ obj/mouv.o: srcs/mouv.c srcs/mouv.c srcs/../includes/so_long.h includes/./../lib
 obj/ft_parsing.o: srcs/ft_parsing.c srcs/ft_parsing.c srcs/./../includes/so_long.h includes/./../libs/minilibx-linux/mlx.h includes/./../libs/printf/libftprintf.h includes/./../libs/gnl/get_next_line.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ft_parsing'
-#  Last modified 2022-11-09 20:45:12.059451787
+#  Last modified 2022-11-10 17:53:33.92711977
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 39):
@@ -547,26 +548,26 @@ obj/ft_parsing.o: srcs/ft_parsing.c srcs/ft_parsing.c srcs/./../includes/so_long
 # Not a target:
 obj/ft_put_tree.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 20:45:12.011451506
+#  Last modified 2022-11-10 17:53:33.859119363
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/game.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-09 18:33:17.915089824
+#  Last modified 2022-11-10 18:26:20.623853647
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/mouv.c:
+ 
 #  Implicit rule search has been done.
-#  Last modified 2022-11-07 17:50:20.618551429
+#  Last modified 2022-11-10 17:57:59.651709134
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
- 
 # Load=39/1024=4%, Rehash=0, Collisions=2/178=1%
 # VPATH Search Paths
 
@@ -580,6 +581,6 @@ srcs/mouv.c:
 # strcache performance: lookups = 231 / hit rate = 69%
 # hash-table stats:
 # Load=70/8192=1%, Rehash=0, Collisions=0/231=0%
-# Finished Make data base on Wed Nov  9 20:45:39 2022
+# Finished Make data base on Thu Nov 10 18:27:51 2022
 
  

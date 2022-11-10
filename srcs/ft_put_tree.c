@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:57:43 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/08 16:27:37 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:13:30 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,36 @@ void	put_the_correct_img(int c, int i, int len, t_list *list)
 		c++;
 	}
 	
+}
+
+void init(t_list *list)
+{
+	list->img = NULL;
+	list->img2 = NULL;
+	list->img3 = NULL;
+	list->img4 = NULL;
+	list->img5 = NULL;
+	list->mlx = NULL;
+	list-> win = NULL;
+}
+
+void clean_all(t_list *list)
+{
+	if (list->img != NULL)
+		mlx_destroy_image(list->mlx,list->img);
+	if (list->img != NULL)
+		mlx_destroy_image(list->mlx,list->img2);
+	if (list->img != NULL)
+		mlx_destroy_image(list->mlx,list->img3);
+	if (list->img != NULL)
+		mlx_destroy_image(list->mlx,list->img4);
+	if (list->img != NULL)
+		mlx_destroy_image(list->mlx,list->img5);
+	if (list->win != NULL)
+		mlx_destroy_window(list->mlx, list->win);
+	if (list->mlx != NULL)
+	{
+		mlx_destroy_display(list->mlx);
+		free(list->mlx);// ????
+	}
 }

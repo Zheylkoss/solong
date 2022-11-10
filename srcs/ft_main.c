@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/09 22:01:20 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:12:07 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(int argc, char **argv)
 	t_list	list;
 	int	b;
 	int	c;
-	// int d;
 
 	list.tab = NULL;
 	list.i = 0;
@@ -49,39 +48,9 @@ int	main(int argc, char **argv)
 				picture(&list);
 		}
 	}
-	// while (b < list.i)
-	// {
-	// 	d = ft_strlen(list.tab[b]);
-	// 	while (c < d)
-	// 	{
-	// 		ft_printf("%d", list.path[b][c]);
-	// 		c++;
-	// 	}
-	// 	ft_printf("\n");
-	// 	c = 0;
-	// 	b++;
-	// }
-	// b = 0;
-	// c = 0;
-	// ft_printf("\n");
-	// while (b < list.i)
-	// {
-	// 	d = ft_strlen(list.tab[b]);
-	// 	while (c < d)
-	// 	{
-	// 		ft_printf("%d", list.matrix[b][c]);
-	// 		c++;
-	// 	}
-	// 	ft_printf("\n");
-	// 	c = 0;
-	// 	b++;
-	// }
 	free_tabchar(list.tab, &list);
 	free_tabchar(list.path, &list);
 	free_tabchar(list.matrix, &list);
-	//free_path(&list);
-	// free_matrix(&list);
-	// ft_printf("%d\n", list.ec_copy);
 	return (0);
 }
 
