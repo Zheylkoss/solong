@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:27:53 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/10 20:41:24 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:20:22 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ int	check_items(int j, char **tab, int i, t_list *list)
 	return (0);
 }
 
-//comparaison des len pour etre sur que toutes les lignes sont de la meme taille
-//et que le nombre de colonne est different du nombre de ligne
 int	check_len(int j, char **tab, int i, t_list *list)
 {
 	list->len_comp = 0;

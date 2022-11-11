@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:32:15 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/10 20:14:57 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:20:37 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int	xpm_to_image(t_list *list)
 	return (0);
 }
 
-//pas besoin de destroy mlx lorsqu'il est null
 int	picture(t_list *list)
 {
 	init(list);

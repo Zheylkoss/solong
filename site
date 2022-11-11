@@ -81,3 +81,16 @@ void	free_all(t_list list)
 	}
 }
 */
+
+	// if (list->tab[i][j + 1] == '1')
+	// {
+	// 	list->tab[i][j + 1] = '1';
+	// 	list->tab[i][j] = 'P';
+	// 	return (1);
+	// }
+	// if (list->tab[i][j + 1] == 'E' && list->ec_copy != 1)
+	// {
+	// 	list->tab[i][j + 1] = 'E';
+	// 	list->tab[i][j] = 'P';
+	// 	return (1);
+	// }

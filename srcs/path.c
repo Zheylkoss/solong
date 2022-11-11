@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:45:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/10 20:33:57 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:21:00 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	verify_path(int i, int j, t_list *list)
 	}
 }
 
-//faire une fonction qui vide path
 int	path_valid(t_list *list)
 {
 	int	i;
@@ -124,29 +123,3 @@ int	path_fill(t_list *list)
 	}
 	return (0);
 }
-
-//si j'utilise cette fonction modifier le backtracking
-// void	path_fill_loop(t_list *list, int index, int a, int j) 
-// {
-// 	while (a < (index - 1))
-// 	{
-// 		if (list->tab[j][a] == 'C')
-// 			list->matrix[j][a] = '2';
-// 		else if (list->tab[j][a] == 'E')
-// 			list->matrix[j][a] = '4';
-// 		else if (list->tab[j][a] == 'P')
-// 		{
-// 			list->matrix[j][a] = '0';
-// 			list->j_p = j;
-// 			list->a_p = a;
-// 		}
-// 		else if (list->tab[j][a] == '1')
-// 			list->matrix[j][a] = '1';
-// 		else
-// 			list->matrix[j][a] = '0';
-// 		list->path[j][a] = '0';
-// 		a++;
-// 	}
-// 		list->matrix[j][a] = '\0';
-// 		list->matrix[j][a] = '\0';
-// }

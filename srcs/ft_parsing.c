@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:33:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/10 20:41:10 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:16:18 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	ft_check(char **argv)
 	return (1);
 }
 
-//renvoyer une valeur differente (n) pour chaque erreur
 int	ft_check_map(char **argv, t_list *list)
 {
 	int	n;
@@ -71,7 +70,9 @@ int	nb_lign(char **argv, t_list *list)
 	char	*taille;
 
 	taille = NULL;
-	list->fd = open(argv[1], O_RDWR);// securite ?
+	list->fd = open(argv[1], O_RDWR);
+	if (list->fd == -1)
+		return (1);
 	while (1)
 	{
 		taille = get_next_line (list->fd);
@@ -80,7 +81,9 @@ int	nb_lign(char **argv, t_list *list)
 		list->i++;
 		free(taille);
 	}
-	close(list->fd);//securite ??
+	close(list->fd);
+	if (list->fd == -1)
+		return (1);
 	return (0);
 }
 
@@ -89,14 +92,18 @@ int	fill_tab(char **argv, char **tab, int i, t_list *list)
 	int	j;
 
 	j = 0;
-	list->fd = open(argv[1], O_RDWR);//securite
+	list->fd = open(argv[1], O_RDWR);
+	if (list->fd == -1)
+		return (1);
 	i = 0;
 	while (i < list->i)
 	{
 		tab[i] = get_next_line (list->fd);
 		i++;
 	}
-	close(list->fd);//securite
+	close(list->fd);
+	if (list->fd == -1)
+		return (1);
 	if (tab[0] == NULL || tab[0][0] != '1')
 	{
 		ft_printf("fichier vide ou debut de ligne incorrect\n");
