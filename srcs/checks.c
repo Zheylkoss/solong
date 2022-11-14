@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:27:53 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/11 15:20:22 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:16:39 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ int	check_items(int j, char **tab, int i, t_list *list)
 	}
 	if (list->p != 1 || list->c < 1 || list->e != 1)
 	{
-		ft_printf("erreur item");
+		ft_printf("Error\n about item\n");
 		return (1);
 	}
-	ft_printf("c : %d\ne : %e\n", list->c, list->e);
 	return (0);
 }
 
@@ -49,7 +48,7 @@ int	check_len(int j, char **tab, int i, t_list *list)
 		list->len_comp = strlen(tab[j]);
 		if (list->len != list->len_comp)
 		{
-			ft_printf("probleme de taille de ligne\n");
+			ft_printf("Error\n on line size\n");
 			return (1);
 		}
 		j++;
@@ -59,7 +58,7 @@ int	check_len(int j, char **tab, int i, t_list *list)
 	{
 		if (tab[i -1][j] != '1' && tab[i - 1][j] != '\n')
 		{
-			ft_printf("erreur derniere ligne\n");
+			ft_printf("Error\n on last line\n");
 			return (1);
 		}
 		j++;
@@ -78,7 +77,7 @@ int	check_lign(int j, char **tab, int i)
 		len = ft_strlen(tab[j]);
 		if (tab[j][0] != '1' || tab[j][len - 2] != '1')
 		{
-			ft_printf("erreur sur les murs\n");
+			ft_printf("Error\n about the walls\n");
 			return (1);
 		}
 		while (tab[j][pos + 2])
@@ -86,7 +85,7 @@ int	check_lign(int j, char **tab, int i)
 			if (tab[j][pos] != '0' && tab[j][pos] != 'E' && tab[j][pos] != 'C'
 				&& tab[j][pos] != 'P' && tab[j][pos] != '1')
 			{
-				ft_printf("la terre du milieu\n");
+				ft_printf("Error\n inside the map\n");
 				return (1);
 			}
 			pos++;

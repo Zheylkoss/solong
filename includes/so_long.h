@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:56:59 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/11 15:19:29 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:43:47 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_list
 	int		p;
 	int		fd;
 	char	**tab;
+	int		counter;
 	int		a_p;
 	int		j_p;
 	int		ec;
@@ -59,7 +60,7 @@ typedef struct s_list
 	int		y_pers;
 }				t_list;
 void	put_tree(t_list *list);
-int		ft_check(char **argv);
+int		ft_check(char **argv, t_list *list);
 int		ft_check_map(char **argv, t_list *list);
 int		path_valid(t_list *list);
 int		check_mouv_d(t_list *list);

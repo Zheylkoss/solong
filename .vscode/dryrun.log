@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/mnt/nfs/homes/zhamdouc/dev/solong'
+make: Entering directory `/Users/zakariyahamdouchi/dev/solong'
 mkdir -p obj/
 clang -Wall -Wextra -Werror -MMD -MP -g -I./includes/ -o obj/ft_main.o -c srcs/ft_main.c
 mkdir -p obj/
@@ -21,5 +21,5 @@ make -C ./libs/gnl/
 make -C ./libs/printf/
 make -C ./libs/minilibx-linux/
 clang -Wall -Wextra -Werror -MMD -MP -g obj/ft_main.o obj/ft_put_tree.o obj/ft_parsing.o obj/path.o obj/mouv.o obj/checks.o obj/path_utils.o obj/game.o -L./libs/libft -lft -L./libs/printf -lprintf -L./libs/gnl -lget_next_line -L./libs/minilibx-linux -lmlx -lXext -lX11 -lm -lz -o so_long
-make: Leaving directory '/mnt/nfs/homes/zhamdouc/dev/solong'
+make: Leaving directory `/Users/zakariyahamdouchi/dev/solong'
  

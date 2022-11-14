@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:57:43 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/10 20:11:09 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:28:56 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	init(t_list *list)
 	list->w_x = 64 * len;
 	list->w_y = 64 * list->i;
 	list->img = NULL;
+	list->counter = 0;
 	list->img2 = NULL;
 	list->img3 = NULL;
 	list->img4 = NULL;

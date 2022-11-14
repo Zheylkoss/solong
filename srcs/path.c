@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:45:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/11/11 15:21:00 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:21:24 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ int	path_valid(t_list *list)
 		return (1);
 	verify_path(i, j, list);
 	if (list->c == 0 && list->e == 0)
-		ft_printf("un chemin vers la vitore existe \n");
+		return (0);
 	else
 	{
-		ft_printf("il n'y a pas d'espoir\n");
+		ft_printf("Error\nNo way to finish this map\n");
 		return (1);
 	}
 	return (0);

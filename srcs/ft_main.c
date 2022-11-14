@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:02 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/11/10 20:06:13 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:17:27 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 
 	if (argc <= 1 || argc > 2)
 	{
-		ft_printf("nombre d'argument incorrect\n");
+		ft_printf("Error\n on the number of arguments\n");
 		return (1);
 	}
 	list.tab = NULL;
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 	list.e = 0;
 	list.c = 0;
 	list.p = 0;
-	if (ft_check(argv) == 0)
+	if (ft_check(argv, &list) == 0)
 	{
 		if (ft_check_map(argv, &list) == 0)
 		{
